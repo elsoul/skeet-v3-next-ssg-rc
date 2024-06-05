@@ -1,0 +1,62 @@
+{
+  "name": "skeet-v3-next-ssg-rc",
+  "version": "0.1.0",
+  "author": "ELSOUL LABO B.V.",
+  "license": "Apache-2.0",
+  "engines": {
+    "pnpm": ">=9",
+    "npm": "please_use_pnpm_instead",
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.1.4",
+  "scripts": {
+    "dev": "next dev -p 4242",
+    "build": "next build",
+    "postbuild": "next-sitemap",
+    "start": "next start",
+    "lint": "next lint",
+    "preview": "pnpm build && wrangler pages dev ./out",
+    "deploy": "pnpm build && wrangler pages deploy",
+    "npm:update": "pnpm update \"!eslint\" --latest",
+    "ui:add": "pnpm dlx shadcn-ui@latest add"
+  },
+  "dependencies": {
+    "@radix-ui/react-avatar": "1.0.4",
+    "@radix-ui/react-dialog": "1.0.5",
+    "@radix-ui/react-dropdown-menu": "2.0.6",
+    "@radix-ui/react-icons": "1.3.0",
+    "@radix-ui/react-label": "2.0.2",
+    "@radix-ui/react-slot": "1.0.2",
+    "@radix-ui/react-toast": "1.1.5",
+    "class-variance-authority": "0.7.0",
+    "clsx": "2.1.1",
+    "next": "15.0.0-canary.2",
+    "next-intl": "3.14.1",
+    "next-themes": "0.3.0",
+    "react": "19.0.0-rc-f994737d14-20240522",
+    "react-dom": "19.0.0-rc-f994737d14-20240522"
+  },
+  "devDependencies": {
+    "@types/node": "20.13.0",
+    "@types/react": "npm:types-react@19.0.0-rc.0",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0",
+    "autoprefixer": "10.4.19",
+    "babel-plugin-react-compiler": "0.0.0-experimental-487cb0e-20240529",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.3",
+    "eslint-config-prettier": "9.1.0",
+    "next-sitemap": "4.2.3",
+    "postcss": "8.4.38",
+    "prettier": "3.2.5",
+    "prettier-plugin-tailwindcss": "0.6.1",
+    "tailwind-merge": "2.3.0",
+    "tailwindcss": "3.4.3",
+    "tailwindcss-animate": "1.0.7",
+    "typescript": "5.4.5",
+    "wrangler": "3.58.0"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc"
+  }
+}

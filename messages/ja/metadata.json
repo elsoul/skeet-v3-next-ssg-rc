@@ -1,0 +1,9 @@
+{
+  "Metadata": {
+    "appTitle": "Skeet v3",
+    "defaultTitle": "ホーム",
+    "defaultDescription": "Skeet v3 静的サイトジェネレータ",
+    "keywords": "サーバーレス, TypeScript, SSG, Next.js, フレームワーク, Cloudflare",
+    "homeTitle": "ホーム"
+  }
+}

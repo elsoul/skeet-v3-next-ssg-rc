@@ -1,0 +1,8 @@
+{
+  "Common": {
+    "toggleTheme": "Toggle theme",
+    "lightMode": "Light",
+    "darkMode": "Dark",
+    "systemMode": "System"
+  }
+}
