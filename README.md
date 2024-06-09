@@ -76,6 +76,12 @@ You can add the high-quality UI components from [shadcn/ui](https://ui.shadcn.co
 pnpm add:ui button
 ```
 
+You can also use [v0](https://v0.dev/) which is a UI generator with shadcn/ui from simple text prompts and images.
+
+<a href="https://v0.dev/">
+  <img src="https://pub-f5c1b877dd3a4b63aacd87ee9a480be9.r2.dev/v0.jpg" alt="v0" />
+</a>
+
 ## References
 
 - [Next.js App Routing](https://nextjs.org/docs/app/building-your-application/routing)
