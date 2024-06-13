@@ -30,7 +30,7 @@ Demo: https://skeet-v3-next-ssg-rc.pages.dev/
 - Static Site Generation
 - i18n Native
 - Next.js App Router
-- React Compiler (No more useMemo and useCallback)
+- React Compiler (Always optimizes memoization for production)
 - Green Coding
 
 <a href="https://www.thegreenwebfoundation.org/green-web-check/?url=https%3A%2F%2Fskeet-v3-next-ssg-rc.pages.dev%2F">
