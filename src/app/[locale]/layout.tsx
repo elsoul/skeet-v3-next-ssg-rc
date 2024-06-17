@@ -1,46 +1,11 @@
 import { Inter, Noto_Sans_JP } from 'next/font/google'
-import {
-  unstable_setRequestLocale,
-  getMessages,
-  getTranslations,
-} from 'next-intl/server'
+import { unstable_setRequestLocale, getMessages } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
 import '../globals.css'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { cn } from '@/lib/utils'
 import { Toaster } from '@/components/ui/toaster'
-import { appInfo, locales } from '@/app/config'
-
-export async function generateMetadata({ params: { locale } }: Props) {
-  const t = await getTranslations({ locale, namespace: 'Metadata' })
-
-  return {
-    generator: appInfo.copyright,
-    applicationName: t('appTitle'),
-    keywords: t('keywords'),
-    title: {
-      template: `%s | ${t('appTitle')}`,
-      default: t('defaultTitle'),
-    },
-    description: t('defaultDescription'),
-    openGraph: {
-      title: {
-        template: `%s | ${t('appTitle')}`,
-        default: t('defaultTitle'),
-      },
-      description: t('defaultDescription'),
-      locale,
-      type: 'website',
-    },
-    twitter: {
-      creator: appInfo.twitterId,
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
-  }
-}
+import { locales } from '@/app/config'
 
 const inter = Inter({
   subsets: ['latin'],
