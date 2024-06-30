@@ -1,6 +1,8 @@
 export const appInfo = {
   copyright: 'ELSOUL LABO B.V.',
   twitterId: '@SkeetDev',
+  githubRepo: 'elsoul/skeet-v3-next-ssg-rc',
+  discordInviteURL: 'https://discord.gg/H2HeqRq54J',
   domain: 'skeet-v3-next-ssg-rc.pages.dev',
 }
 
