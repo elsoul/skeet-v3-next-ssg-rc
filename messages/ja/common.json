@@ -3,6 +3,9 @@
     "toggleTheme": "テーマ変更",
     "lightMode": "ライトモード",
     "darkMode": "ダークモード",
-    "systemMode": "システムに合わせる"
+    "systemMode": "システムに合わせる",
+    "copyCode": "コードをコピー",
+    "download": "ダウンロード",
+    "toggleNavigationMenu": "ナビゲーションメニュー開閉ボタン"
   }
 }

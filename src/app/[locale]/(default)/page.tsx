@@ -3,11 +3,14 @@ import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
 import { useTranslations } from 'next-intl'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
+import path from 'path'
+const componentDir = path.dirname(__filename).split('/').pop() ?? '(default)'
+
 export async function generateMetadata({ params: { locale } }: Props) {
   const t = await getTranslations({ locale, namespace: 'Metadata' })
 
   return {
-    title: t('homeTitle'),
+    title: t(componentDir),
   }
 }
 

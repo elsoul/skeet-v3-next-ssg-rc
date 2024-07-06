@@ -12,4 +12,4 @@ export const logoUrl =
 export const locales = ['en', 'ja'] as const
 export const defaultLocale = 'en'
 
-export const messageJsons = ['common', 'metadata']
+export const messageJsons = ['common', 'metadata', 'news', 'doc', 'legal']

@@ -3,6 +3,9 @@
     "toggleTheme": "Toggle theme",
     "lightMode": "Light",
     "darkMode": "Dark",
-    "systemMode": "System"
+    "systemMode": "System",
+    "copyCode": "Copy code",
+    "download": "Download",
+    "toggleNavigationMenu": "Toggle navigation menu"
   }
 }

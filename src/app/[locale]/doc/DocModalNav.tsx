@@ -32,7 +32,7 @@ export default function DefaultModalNav() {
             onClick={() => setOpen(true)}
           >
             <HamburgerMenuIcon className="h-5 w-5" />
-            <span className="sr-only">{t('User.toggleNavigationMenu')}</span>
+            <span className="sr-only">{t('Common.toggleNavigationMenu')}</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="top" className="flex h-screen flex-col">
@@ -45,7 +45,7 @@ export default function DefaultModalNav() {
                 }}
               />
             </div>
-            {/* {defaultNav.map((navItem) => (
+            {/* {defaultHeaderNav.map((navItem) => (
               <Link
                 href={navItem.path}
                 key={`ModalNav ${navItem.label}`}

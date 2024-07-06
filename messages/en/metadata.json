@@ -4,6 +4,8 @@
     "defaultTitle": "Home",
     "defaultDescription": "Skeet v3 Static Site Generator.",
     "keywords": "Serverless, TypeScript, SSG, Next.js, Framework, Cloudflare",
-    "homeTitle": "Home"
+    "(default)": "Home",
+    "news": "News",
+    "doc": "Doc"
   }
 }
