@@ -1,6 +1,5 @@
 import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
-
 import { getGroupDir } from '@/lib/utils'
 const groupDir = getGroupDir(__filename)
 

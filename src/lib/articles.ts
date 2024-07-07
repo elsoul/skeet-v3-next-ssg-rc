@@ -55,6 +55,7 @@ export const getAllArticles = (articleDirPrefix: string) => {
       parts.shift()
       return parts
     })
+    .filter((slug) => slug.length > 0)
 
   return uniqueArray(slugs)
 }
