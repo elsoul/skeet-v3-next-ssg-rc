@@ -1,28 +1,41 @@
 import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
+import { unstable_setRequestLocale } from 'next-intl/server'
+import { getGroupDir, truncateContent } from '@/lib/utils'
+import { getAllArticles, getArticleBySlug } from '@/lib/articles'
+import { locales } from '@/app/config'
+const groupDir = getGroupDir(__filename)
 
-import { useTranslations } from 'next-intl'
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
+export async function generateMetadata({ params: { locale, slug } }: Props) {
+  const metadata = getArticleBySlug(
+    slug,
+    ['title', 'thumbnail', 'content'],
+    groupDir,
+    locale,
+  )
 
-import path from 'path'
-const componentDir = path.dirname(__filename).split('/').pop() ?? '(default)'
-
-export async function generateMetadata({ params: { locale } }: Props) {
-  const t = await getTranslations({ locale, namespace: 'Metadata' })
+  const description = truncateContent(metadata.content, 160)
 
   return {
-    title: t(componentDir),
+    title: metadata.title,
+    description,
+    openGraph: {
+      images: [metadata.thumbnail],
+    },
+    twitter: {
+      images: [metadata.thumbnail],
+    },
   }
 }
 
 type Props = {
   params: {
     locale: string
+    slug: string[]
   }
 }
 
 export default function LegalArticle({ params: { locale } }: Props) {
   unstable_setRequestLocale(locale)
-  const t = useTranslations()
   return (
     <>
       <div className="flex -translate-y-12 flex-col items-center justify-center gap-8 p-3">
@@ -33,8 +46,13 @@ export default function LegalArticle({ params: { locale } }: Props) {
 }
 
 export function generateStaticParams() {
-  return [
-    { locale: 'en', slug: ['privacy-policy'] },
-    { locale: 'ja', slug: ['privacy-policy'] },
-  ]
+  const paths = locales.flatMap((locale) => {
+    const articles = getAllArticles(groupDir)
+
+    return articles.map((slug) => ({
+      locale,
+      slug,
+    }))
+  })
+  return paths
 }

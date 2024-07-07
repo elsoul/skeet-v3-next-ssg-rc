@@ -1,7 +1,8 @@
 import fs from 'fs'
-import glob from 'glob'
+import { glob } from 'glob'
 import { join } from 'path'
 import matter from 'gray-matter'
+import { uniqueArray } from './utils'
 
 export const getArticleBySlug = (
   slugArray: string[],
@@ -9,7 +10,10 @@ export const getArticleBySlug = (
   articleDirPrefix: string,
   locale: string,
 ) => {
-  const articlesDirectory = join(process.cwd(), `${articleDirPrefix}/${locale}`)
+  const articlesDirectory = join(
+    process.cwd(),
+    `articles/${articleDirPrefix}/${locale}`,
+  )
   const matchedSlug = slugArray.join('/')
   const realSlug = matchedSlug.replace(/\.md$/, '')
   const fullPath = join(articlesDirectory, `${realSlug}.md`)
@@ -41,8 +45,16 @@ export const getArticleBySlug = (
 }
 
 export const getAllArticles = (articleDirPrefix: string) => {
-  const entries = glob.sync(`${articleDirPrefix}/**/*.md`)
-  return entries
+  const entries = glob.sync(`articles/${articleDirPrefix}/**/*.md`)
+
+  const slugs = entries
     .map((file) => file.split(articleDirPrefix).pop())
-    .map((slug) => (slug as string).replace(/\.md$/, '').split('/'))
+    .map((slug) => {
+      const parts = (slug as string).replace(/\.md$/, '').split('/')
+      parts.shift()
+      parts.shift()
+      return parts
+    })
+
+  return uniqueArray(slugs)
 }

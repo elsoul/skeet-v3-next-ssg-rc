@@ -34,7 +34,7 @@ type Props = {
   }
 }
 
-export default function NewsArticle({ params: { locale } }: Props) {
+export default function DocArticle({ params: { locale } }: Props) {
   unstable_setRequestLocale(locale)
   return (
     <>
