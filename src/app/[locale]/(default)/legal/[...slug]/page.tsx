@@ -34,8 +34,17 @@ type Props = {
   }
 }
 
-export default function LegalArticle({ params: { locale } }: Props) {
+export default function LegalArticle({ params: { locale, slug } }: Props) {
   unstable_setRequestLocale(locale)
+
+  const articleData = getArticleBySlug(
+    slug,
+    ['title', 'content'],
+    groupDir,
+    locale,
+  )
+  console.log(articleData)
+
   return (
     <>
       <div className="flex -translate-y-12 flex-col items-center justify-center gap-8 p-3">
