@@ -1,6 +1,6 @@
 'use client'
 
-import { appInfo } from '@/app/config'
+import appInfo from '@appInfo'
 import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
 import {
   DiscordIconLink,

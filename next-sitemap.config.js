@@ -1,5 +1,7 @@
+const appInfo = require('./appInfo')
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: `https://skeet-v3-next-ssg-rc.pages.dev`,
+  siteUrl: `https://${appInfo.domain}`,
   generateRobotsTxt: true,
 }

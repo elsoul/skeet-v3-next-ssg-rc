@@ -1,4 +1,4 @@
-import { appInfo } from '@/app/config'
+import appInfo from '@appInfo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import {

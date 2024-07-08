@@ -18,7 +18,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@appInfo": ["./appInfo.json"]
     },
     "target": "ES5"
   },

@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
-import { appInfo, locales } from './config'
+import { locales } from './config'
+import appInfo from '@appInfo'
 
 export async function generateMetadata({ params: { locale } }: Props) {
   const t = await getTranslations({
