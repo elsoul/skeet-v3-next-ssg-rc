@@ -12,10 +12,10 @@ export const getDataForPageByFilename = (filename: string) => {
   return {
     groupDir,
     generateMetadata: async ({ params: { locale } }: PageProps) => {
-      const t = await getTranslations({ locale, namespace: 'Metadata' })
+      const t = await getTranslations({ locale, namespace: groupDir })
 
       return {
-        title: t(groupDir),
+        title: t('title'),
       }
     },
   }

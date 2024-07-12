@@ -19,10 +19,10 @@ export default function LogoHorizontalLink({
   return (
     <>
       <Link href={href} {...rest}>
-        <span className="sr-only">{t('Metadata.appTitle')}</span>
+        <span className="sr-only">{t('metadata.appTitle')}</span>
         <Image
           src={logoHorizontal}
-          alt={t('Metadata.appTitle')}
+          alt={t('metadata.appTitle')}
           className={cn('hover:opacity-80 dark:hidden', className)}
           unoptimized
           placeholder="blur"
@@ -30,7 +30,7 @@ export default function LogoHorizontalLink({
         />
         <Image
           src={logoHorizontalInvert}
-          alt={t('Metadata.appTitle')}
+          alt={t('metadata.appTitle')}
           className={cn('hidden hover:opacity-80 dark:block', className)}
           unoptimized
           placeholder="blur"

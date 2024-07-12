@@ -1,11 +1,8 @@
 {
-  "Metadata": {
+  "metadata": {
     "appTitle": "Skeet v3",
     "defaultTitle": "Home",
     "defaultDescription": "Skeet v3 Static Site Generator.",
-    "keywords": "Serverless, TypeScript, SSG, Next.js, Framework, Cloudflare",
-    "(default)": "Home",
-    "news": "News",
-    "doc": "Doc"
+    "keywords": "Serverless, TypeScript, SSG, Next.js, Framework, Cloudflare"
   }
 }

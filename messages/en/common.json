@@ -1,5 +1,5 @@
 {
-  "Common": {
+  "common": {
     "toggleTheme": "Toggle theme",
     "lightMode": "Light",
     "darkMode": "Dark",

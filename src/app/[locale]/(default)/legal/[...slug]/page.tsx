@@ -10,7 +10,7 @@ const { groupDir, generateMetadata, generateStaticParams } =
   getDataForArticlePageByFilename(__filename)
 export { generateMetadata, generateStaticParams }
 
-export default function LegalArticle({
+export default function LegalArticlePage({
   params: { locale, slug },
 }: ArticlePageProps) {
   unstable_setRequestLocale(locale)

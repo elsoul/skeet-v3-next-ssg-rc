@@ -5,7 +5,7 @@ import appInfo from '@appInfo'
 export async function generateMetadata({ params: { locale } }: Props) {
   const t = await getTranslations({
     locale: locale ? locale : locales[0],
-    namespace: 'Metadata',
+    namespace: 'metadata',
   })
 
   return {

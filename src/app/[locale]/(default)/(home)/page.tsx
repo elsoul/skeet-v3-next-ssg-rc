@@ -5,7 +5,7 @@ import { getDataForPageByFilename, PageProps } from '@/lib/pages'
 const { generateMetadata } = getDataForPageByFilename(__filename)
 export { generateMetadata }
 
-export default function Home({ params: { locale } }: PageProps) {
+export default function HomePage({ params: { locale } }: PageProps) {
   unstable_setRequestLocale(locale)
   return (
     <>

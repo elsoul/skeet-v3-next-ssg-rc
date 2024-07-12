@@ -1,5 +1,5 @@
 {
-  "Common": {
+  "common": {
     "toggleTheme": "テーマ変更",
     "lightMode": "ライトモード",
     "darkMode": "ダークモード",

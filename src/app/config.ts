@@ -15,7 +15,7 @@ export const defaultLocale = 'en'
 export const messageJsons = [
   'common',
   'metadata',
-  '(default)',
+  '(home)',
   'news',
   'doc',
   'legal',

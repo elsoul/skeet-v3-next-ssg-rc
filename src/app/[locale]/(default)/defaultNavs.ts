@@ -8,25 +8,25 @@ export enum DEFAULT_PATHS {
 export const defaultHeaderNav = [
   {
     path: DEFAULT_PATHS.doc,
-    label: 'Doc.title',
+    label: 'doc.title',
   },
   {
     path: DEFAULT_PATHS.news,
-    label: 'News.title',
+    label: 'news.title',
   },
 ]
 
 export const defaultFooterNav = [
   {
     path: DEFAULT_PATHS.doc,
-    label: 'Doc.title',
+    label: 'doc.title',
   },
   {
     path: DEFAULT_PATHS.news,
-    label: 'News.title',
+    label: 'news.title',
   },
   {
     path: DEFAULT_PATHS.privacy,
-    label: 'Legal.privacy',
+    label: 'legal.privacy',
   },
 ]
