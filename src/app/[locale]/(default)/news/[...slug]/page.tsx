@@ -1,40 +1,18 @@
-import { locales } from '@/app/config'
 import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
-import { getAllArticles, getArticleBySlug } from '@/lib/articles'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import { getGroupDir, truncateContent } from '@/lib/utils'
-const groupDir = getGroupDir(__filename)
+import {
+  ArticlePageProps,
+  getDataForArticlePageByFilename,
+  getArticleBySlug,
+} from '@/lib/articles'
 
-export async function generateMetadata({ params: { locale, slug } }: Props) {
-  const metadata = getArticleBySlug(
-    slug,
-    ['title', 'thumbnail', 'content'],
-    groupDir,
-    locale,
-  )
+const { groupDir, generateMetadata, generateStaticParams } =
+  getDataForArticlePageByFilename(__filename)
+export { generateMetadata, generateStaticParams }
 
-  const description = truncateContent(metadata.content, 160)
-
-  return {
-    title: metadata.title,
-    description,
-    openGraph: {
-      images: [metadata.thumbnail],
-    },
-    twitter: {
-      images: [metadata.thumbnail],
-    },
-  }
-}
-
-type Props = {
-  params: {
-    locale: string
-    slug: string[]
-  }
-}
-
-export default function NewsArticle({ params: { locale, slug } }: Props) {
+export default function NewsArticle({
+  params: { locale, slug },
+}: ArticlePageProps) {
   unstable_setRequestLocale(locale)
 
   const articleData = getArticleBySlug(
@@ -52,16 +30,4 @@ export default function NewsArticle({ params: { locale, slug } }: Props) {
       </div>
     </>
   )
-}
-
-export function generateStaticParams() {
-  const paths = locales.flatMap((locale) => {
-    const articles = getAllArticles(groupDir)
-
-    return articles.map((slug) => ({
-      locale,
-      slug,
-    }))
-  })
-  return paths
 }

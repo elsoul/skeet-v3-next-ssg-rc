@@ -2,7 +2,8 @@ import fs from 'fs'
 import { glob } from 'glob'
 import { join } from 'path'
 import matter from 'gray-matter'
-import { uniqueArray } from './utils'
+import { getGroupDir, uniqueArray, truncateContent } from './utils'
+import { locales } from '@/app/config'
 
 export const getArticleBySlug = (
   slugArray: string[],
@@ -58,4 +59,50 @@ export const getAllArticles = (articleDirPrefix: string) => {
     .filter((slug) => slug.length > 0)
 
   return uniqueArray(slugs)
+}
+
+export type ArticlePageProps = {
+  params: {
+    locale: string
+    slug: string[]
+  }
+}
+
+export const getDataForArticlePageByFilename = (filename: string) => {
+  const groupDir = getGroupDir(filename)
+  return {
+    groupDir,
+    generateMetadata: ({ params: { locale, slug } }: ArticlePageProps) => {
+      const metadata = getArticleBySlug(
+        slug,
+        ['title', 'thumbnail', 'content'],
+        groupDir,
+        locale,
+      )
+
+      const description = truncateContent(metadata.content, 160)
+
+      return {
+        title: metadata.title,
+        description,
+        openGraph: {
+          images: [metadata.thumbnail],
+        },
+        twitter: {
+          images: [metadata.thumbnail],
+        },
+      }
+    },
+    generateStaticParams: () => {
+      const paths = locales.flatMap((locale) => {
+        const articles = getAllArticles(groupDir)
+
+        return articles.map((slug) => ({
+          locale,
+          slug,
+        }))
+      })
+      return paths
+    },
+  }
 }

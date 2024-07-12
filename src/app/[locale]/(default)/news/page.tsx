@@ -1,23 +1,11 @@
 import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
-import { getGroupDir } from '@/lib/utils'
-const groupDir = getGroupDir(__filename)
+import { unstable_setRequestLocale } from 'next-intl/server'
+import { getDataForPageByFilename, PageProps } from '@/lib/pages'
 
-export async function generateMetadata({ params: { locale } }: Props) {
-  const t = await getTranslations({ locale, namespace: 'Metadata' })
+const { generateMetadata } = getDataForPageByFilename(__filename)
+export { generateMetadata }
 
-  return {
-    title: t(groupDir),
-  }
-}
-
-type Props = {
-  params: {
-    locale: string
-  }
-}
-
-export default function NewsPage({ params: { locale } }: Props) {
+export default function NewsPage({ params: { locale } }: PageProps) {
   unstable_setRequestLocale(locale)
 
   return (
