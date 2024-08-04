@@ -1,4 +1,3 @@
-import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import { getDataForPageByFilename, PageProps } from '@/lib/pages'
 
@@ -10,7 +9,7 @@ export default function NewsPage({ params: { locale } }: PageProps) {
 
   return (
     <>
-      <div className="p-3">skeet</div>
+      <div className="mx-auto max-w-7xl p-3 md:py-8">News Index</div>
     </>
   )
 }

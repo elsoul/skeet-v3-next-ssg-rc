@@ -6,6 +6,7 @@
     "systemMode": "System",
     "copyCode": "Copy code",
     "download": "Download",
-    "toggleNavigationMenu": "Toggle navigation menu"
+    "toggleNavigationMenu": "Toggle navigation menu",
+    "toc": "Table of contents"
   }
 }

@@ -8,7 +8,7 @@ export default function HomePage({ params: { locale } }: PageProps) {
   unstable_setRequestLocale(locale)
   return (
     <>
-      <div className="p-3">home</div>
+      <div className="mx-auto max-w-7xl p-3">home</div>
     </>
   )
 }

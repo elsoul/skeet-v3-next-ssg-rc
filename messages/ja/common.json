@@ -6,6 +6,7 @@
     "systemMode": "システムに合わせる",
     "copyCode": "コードをコピー",
     "download": "ダウンロード",
-    "toggleNavigationMenu": "ナビゲーションメニュー開閉ボタン"
+    "toggleNavigationMenu": "ナビゲーションメニュー開閉ボタン",
+    "toc": "目次"
   }
 }

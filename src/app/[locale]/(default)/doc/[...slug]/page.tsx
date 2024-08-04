@@ -1,4 +1,3 @@
-import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import {
   ArticlePageProps,

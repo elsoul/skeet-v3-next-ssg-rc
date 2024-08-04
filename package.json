@@ -35,7 +35,10 @@
     "@react-spring/web": "9.7.3",
     "class-variance-authority": "0.7.0",
     "clsx": "2.1.1",
+    "github-slugger": "2.0.0",
     "jotai": "2.8.4",
+    "lodash.throttle": "4.1.1",
+    "mdast-util-to-string": "4.0.0",
     "next": "15.0.0-canary.2",
     "next-intl": "3.14.1",
     "next-themes": "0.3.0",
@@ -43,10 +46,14 @@
     "react-dom": "19.0.0-rc-f994737d14-20240522",
     "react-markdown": "9.0.1",
     "react-syntax-highlighter": "15.5.0",
+    "remark": "15.0.1",
     "remark-gfm": "4.0.0",
-    "remark-math": "6.0.0"
+    "remark-math": "6.0.0",
+    "remark-slug": "7.0.1",
+    "unist-util-visit": "5.0.0"
   },
   "devDependencies": {
+    "@types/lodash.throttle": "4.1.9",
     "@types/node": "20.13.0",
     "@types/react": "npm:types-react@19.0.0-rc.0",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0",
@@ -67,6 +74,7 @@
     "tailwindcss": "3.4.3",
     "tailwindcss-animate": "1.0.7",
     "typescript": "5.4.5",
+    "unified": "11.0.5",
     "wrangler": "3.58.0"
   },
   "overrides": {

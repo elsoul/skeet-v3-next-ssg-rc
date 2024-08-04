@@ -25,8 +25,11 @@ export default function NewsArticlePage({
 
   return (
     <>
-      <div className="flex -translate-y-12 flex-col items-center justify-center gap-8 p-3">
-        <LogoHorizontalLink className="w-24" />
+      <div className="mx-auto max-w-4xl p-3 md:py-8">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
+          <div className="p-4 md:col-span-3">Contents</div>
+          <div className="p-4 md:col-span-1">ToC</div>
+        </div>
       </div>
     </>
   )
