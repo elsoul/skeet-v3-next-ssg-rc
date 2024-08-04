@@ -14,6 +14,7 @@ import { defaultFooterNav } from './defaultNavs'
 import { Link, usePathname } from '@/navigation'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
+import GreenHostingBadge from '@/components/common/GreenHostingBadge'
 
 export default function DefaultFooter() {
   const t = useTranslations()
@@ -49,7 +50,11 @@ export default function DefaultFooter() {
             ))}
           </div>
           <div className="flex w-full flex-col"></div>
-          <div className="flex w-full flex-col"></div>
+          <div className="flex w-full flex-col">
+            <div className="max-w-40 sm:ml-auto">
+              <GreenHostingBadge />
+            </div>
+          </div>
         </div>
         <div className="flex w-full flex-row items-center justify-center">
           <p className="text-sm tracking-tight text-zinc-400 dark:text-zinc-300">
