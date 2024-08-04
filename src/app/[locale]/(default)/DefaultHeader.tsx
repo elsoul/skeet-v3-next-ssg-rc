@@ -19,7 +19,7 @@ export default function DefaultHeader() {
 
   return (
     <>
-      <header className="sticky flex w-full flex-col gap-10 px-6 py-4">
+      <header className="sticky top-0 flex w-full flex-col gap-10 px-6 py-4 backdrop-blur-xl">
         <div className="mx-auto flex w-full max-w-7xl flex-row items-center gap-20">
           <LogoHorizontalLink className="w-24" />
           <div className="hidden gap-8 md:flex md:flex-row">
@@ -41,7 +41,7 @@ export default function DefaultHeader() {
           <div className="flex flex-grow" />
           <div className="flex flex-row items-start justify-center gap-3">
             <DefaultModalNav />
-            <div className="hidden gap-3 md:flex md:flex-row">
+            <div className="hidden gap-4 md:flex md:flex-row">
               <GithubIconLink />
               <TwitterIconLink />
               <DiscordIconLink />

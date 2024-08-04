@@ -1,6 +1,6 @@
 export enum DEFAULT_PATHS {
   home = '/',
-  doc = '/doc/',
+  doc = '/doc/general/getting-started/',
   news = '/news/',
   privacy = '/legal/privacy-policy/',
 }

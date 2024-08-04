@@ -1,4 +1,3 @@
-import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import { getDataForPageByFilename, PageProps } from '@/lib/pages'
 
@@ -9,9 +8,7 @@ export default function HomePage({ params: { locale } }: PageProps) {
   unstable_setRequestLocale(locale)
   return (
     <>
-      <div className="flex -translate-y-12 flex-col items-center justify-center gap-8 p-3">
-        <LogoHorizontalLink className="w-24" />
-      </div>
+      <div className="p-3">home</div>
     </>
   )
 }

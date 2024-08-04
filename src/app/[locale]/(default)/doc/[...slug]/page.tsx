@@ -25,8 +25,9 @@ export default function DocArticlePage({
 
   return (
     <>
-      <div className="flex -translate-y-12 flex-col items-center justify-center gap-8 p-3">
-        <LogoHorizontalLink className="w-24" />
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div className="md:col-span-2">Contents</div>
+        <div className="md:col-span-1">ToC</div>
       </div>
     </>
   )

@@ -10,9 +10,7 @@ export default function NewsPage({ params: { locale } }: PageProps) {
 
   return (
     <>
-      <div className="flex -translate-y-12 flex-col items-center justify-center gap-8 p-3">
-        <LogoHorizontalLink className="w-24" />
-      </div>
+      <div className="p-3">skeet</div>
     </>
   )
 }

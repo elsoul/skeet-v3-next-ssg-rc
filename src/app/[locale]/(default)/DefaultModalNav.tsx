@@ -21,6 +21,7 @@ export default function DefaultModalNav() {
   const [open, setOpen] = useState(false)
   const t = useTranslations()
   const pathname = usePathname()
+  const isActivePath = (path: string) => pathname.includes(path)
 
   return (
     <>
@@ -51,7 +52,7 @@ export default function DefaultModalNav() {
                 href={navItem.path}
                 key={navItem.label}
                 className={cn(
-                  pathname === navItem.path
+                  isActivePath(navItem.path)
                     ? 'bg-muted text-foreground hover:text-foreground dark:bg-muted/40'
                     : 'text-muted-foreground hover:text-foreground dark:text-foreground dark:hover:opacity-80',
                   'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2',

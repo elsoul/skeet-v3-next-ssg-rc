@@ -17,9 +17,9 @@ export default async function DefaultLayout({
 
   return (
     <>
-      <div className="flex min-h-screen flex-col justify-between">
+      <div className="flex flex-col">
         <DefaultHeader />
-        <main>{children}</main>
+        <main className="min-h-screen">{children}</main>
         <DefaultFooter />
       </div>
     </>
