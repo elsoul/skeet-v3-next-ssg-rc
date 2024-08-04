@@ -40,7 +40,7 @@ export default function ArticleContents({ content }: Props) {
           h3({ children, ...props }) {
             return (
               <h3
-                className="mb-1 mt-12 text-xl font-bold tracking-tight"
+                className="mb-1 mt-8 text-xl font-bold tracking-tight"
                 id={props.id}
               >
                 {children as React.ReactNode}
@@ -50,7 +50,7 @@ export default function ArticleContents({ content }: Props) {
           h4({ children, ...props }) {
             return (
               <h4
-                className="mb-1 mt-12 text-lg font-bold tracking-tight"
+                className="mb-1 mt-6 text-lg font-bold tracking-tight"
                 id={props.id}
               >
                 {children as React.ReactNode}

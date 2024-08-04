@@ -51,9 +51,9 @@ export default function Toc({ toc, activeItemIds }: Props) {
                   onClick={(e) => handleClick(e, item.id)}
                   className={clsx(
                     activeItemIds.includes(item.id)
-                      ? 'bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-50'
-                      : `rounded-sm text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-900 dark:hover:text-zinc-50`,
-                    `block px-3 py-2 text-sm font-medium ml-${
+                      ? 'bg-zinc-100 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-50'
+                      : `text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-zinc-50`,
+                    `block rounded-lg px-3 py-2 text-sm font-medium ml-${
                       item.depth > 2 ? 3 : 0
                     }`,
                   )}

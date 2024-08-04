@@ -7,7 +7,7 @@ description: Getting Started Skeet Framework
 ## Skeet v3
 
 ```
-$ pnpm add -g @skeet-framework/cli
+pnpm add -g @skeet-framework/cli
 ```
 
 LFGGG 🚀🔥

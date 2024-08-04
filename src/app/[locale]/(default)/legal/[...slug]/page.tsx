@@ -6,6 +6,7 @@ import {
 } from '@/lib/articles'
 import ScrollSyncToc from '@/components/articles/ScrollSyncToc'
 import ArticleContents from '@/components/articles/ArticleContents'
+import { cn } from '@/lib/utils'
 
 const { groupDir, generateMetadata, generateStaticParams } =
   getDataForArticlePageByFilename(__filename)
@@ -22,7 +23,6 @@ export default function LegalArticlePage({
     groupDir,
     locale,
   )
-  console.log(articleData)
 
   return (
     <>
@@ -35,7 +35,12 @@ export default function LegalArticlePage({
             <ArticleContents content={articleData.content as string} />
           </div>
           <div className="max-h-full p-4 md:col-span-1">
-            <div className="hidden md:sticky md:top-32 md:block">
+            <div
+              className={cn(
+                'scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-zinc-300 dark:scrollbar-track-zinc-950 dark:scrollbar-thumb-zinc-600',
+                'hidden max-h-[calc(100vh-10rem)] md:sticky md:top-32 md:block',
+              )}
+            >
               <ScrollSyncToc rawMarkdownBody={articleData.content as string} />
             </div>
           </div>
