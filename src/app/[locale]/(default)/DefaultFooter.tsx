@@ -37,7 +37,7 @@ export default function DefaultFooter() {
             {defaultFooterNav.map((navItem) => (
               <Link
                 href={navItem.path}
-                key={`ModalNav ${navItem.label}`}
+                key={navItem.label}
                 className={cn(
                   isActivePath(navItem.path)
                     ? 'bg-muted text-foreground hover:text-foreground dark:bg-muted/40'

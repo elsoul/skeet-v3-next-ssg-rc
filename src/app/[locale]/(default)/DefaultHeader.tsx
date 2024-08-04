@@ -26,7 +26,7 @@ export default function DefaultHeader() {
             {defaultHeaderNav.map((navItem) => (
               <Link
                 href={navItem.path}
-                key={`DefaultHeader ${navItem.label}`}
+                key={navItem.label}
                 className={cn(
                   isActivePath(navItem.path)
                     ? 'bg-muted text-foreground hover:text-foreground dark:bg-muted/40'
