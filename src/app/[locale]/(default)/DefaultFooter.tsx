@@ -18,6 +18,8 @@ import { useTranslations } from 'next-intl'
 export default function DefaultFooter() {
   const t = useTranslations()
   const pathname = usePathname()
+  const isActivePath = (path: string) => pathname.includes(path)
+
   return (
     <>
       <footer className="mx-auto flex w-full max-w-7xl flex-col gap-10 border-t border-zinc-200 px-6 pb-8 pt-10 dark:border-zinc-500">
@@ -36,7 +38,7 @@ export default function DefaultFooter() {
                 href={navItem.path}
                 key={`ModalNav ${navItem.label}`}
                 className={cn(
-                  pathname === navItem.path
+                  isActivePath(navItem.path)
                     ? 'bg-muted text-foreground hover:text-foreground dark:bg-muted/40'
                     : 'text-muted-foreground hover:text-foreground',
                   'flex items-center gap-4 rounded-xl px-3 py-2',
