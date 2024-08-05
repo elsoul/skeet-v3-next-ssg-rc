@@ -87,11 +87,13 @@ export default function ArticleContents({ content }: Props) {
           },
           code({ node, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '')
+            const fileMatch = /:(.*)/.exec(className || '')
 
             return (
               <CodeBlock
                 key={Math.random()}
                 language={(match && match[1]) || ''}
+                fileName={(fileMatch && fileMatch[1]) || ''}
                 value={String(children).replace(/\n$/, '')}
                 {...props}
               />

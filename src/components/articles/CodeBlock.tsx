@@ -19,6 +19,7 @@ import { useTranslations } from 'next-intl'
 
 interface Props {
   language: string
+  fileName: string
   value: string
 }
 
@@ -52,6 +53,7 @@ export const programmingLanguages: languageMap = {
   sql: '.sql',
   html: '.html',
   css: '.css',
+  tsx: '.tsx',
 }
 
 export const generateRandomString = (length: number, lowercase = false) => {
@@ -63,7 +65,7 @@ export const generateRandomString = (length: number, lowercase = false) => {
   return lowercase ? result.toLowerCase() : result
 }
 
-const CodeBlock: FC<Props> = memo(({ language, value }) => {
+const CodeBlock: FC<Props> = memo(({ language, value, fileName }) => {
   const t = useTranslations()
   const { isCopied, copyToClipboard } = useCopyToClipboard({ timeout: 2000 })
 
@@ -102,7 +104,9 @@ const CodeBlock: FC<Props> = memo(({ language, value }) => {
   return (
     <div className="mx-auto mb-8 mt-4 w-full rounded-2xl bg-zinc-800 md:max-w-md lg:max-w-xl">
       <div className="flex items-center justify-between rounded-t-2xl bg-zinc-800 px-6 pr-4 pt-1.5 text-zinc-100">
-        <span className="text-xs lowercase">{language}</span>
+        <span className="break-all text-xs lowercase">
+          {fileName !== '' ? fileName : language}
+        </span>
         <div className="flex items-center space-x-1">
           <Button
             variant="ghost"
