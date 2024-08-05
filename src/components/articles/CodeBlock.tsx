@@ -16,6 +16,7 @@ import {
   DownloadIcon,
 } from '@radix-ui/react-icons'
 import { useTranslations } from 'next-intl'
+import { cn } from '@/lib/utils'
 
 interface Props {
   language: string
@@ -103,8 +104,13 @@ const CodeBlock: FC<Props> = memo(({ language, value, fileName }) => {
 
   return (
     <div className="mx-auto mb-8 mt-4 w-full rounded-2xl bg-zinc-800">
-      <div className="flex items-center justify-between rounded-t-2xl bg-zinc-800 px-6 pr-4 pt-1.5 text-zinc-100">
-        <span className="break-all text-xs lowercase">
+      <div
+        className={cn(
+          'flex items-center justify-between gap-2 rounded-t-2xl bg-zinc-800 px-4 pr-4 pt-1.5 text-zinc-100',
+          'scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-track-zinc-800 scrollbar-thumb-zinc-300 dark:scrollbar-track-zinc-800 dark:scrollbar-thumb-zinc-600',
+        )}
+      >
+        <span className="w-full break-all text-xs lowercase">
           {fileName !== '' ? fileName : language}
         </span>
         <div className="flex items-center space-x-1">
