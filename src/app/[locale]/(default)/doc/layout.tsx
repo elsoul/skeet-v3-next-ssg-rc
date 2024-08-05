@@ -16,9 +16,9 @@ export default async function DocLayout({
 
   return (
     <>
-      <div className="mx-auto max-w-6xl p-3 md:py-8">
-        <div className="relative grid grid-cols-1 gap-4 md:grid-cols-4">
-          <div className="max-h-full p-4 md:col-span-1">
+      <div className="mx-auto max-w-7xl p-3 md:py-8">
+        <div className="relative grid grid-cols-1 gap-4 md:grid-cols-5">
+          <div className="max-h-full sm:p-4 md:col-span-1">
             <div
               className={cn(
                 'scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-zinc-300 dark:scrollbar-track-zinc-950 dark:scrollbar-thumb-zinc-600',
@@ -28,7 +28,7 @@ export default async function DocLayout({
               Nav
             </div>
           </div>
-          <div className="p-4 md:col-span-3">{children}</div>
+          <div className="sm:p-4 md:col-span-4">{children}</div>
         </div>
       </div>
     </>

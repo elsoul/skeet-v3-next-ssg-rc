@@ -102,7 +102,7 @@ const CodeBlock: FC<Props> = memo(({ language, value, fileName }) => {
   }
 
   return (
-    <div className="mx-auto mb-8 mt-4 w-full rounded-2xl bg-zinc-800 md:max-w-md lg:max-w-xl">
+    <div className="mx-auto mb-8 mt-4 w-full rounded-2xl bg-zinc-800">
       <div className="flex items-center justify-between rounded-t-2xl bg-zinc-800 px-6 pr-4 pt-1.5 text-zinc-100">
         <span className="break-all text-xs lowercase">
           {fileName !== '' ? fileName : language}
@@ -138,7 +138,6 @@ const CodeBlock: FC<Props> = memo(({ language, value, fileName }) => {
         PreTag="div"
         customStyle={{
           width: '100%',
-          maxWidth: 'calc(100vw - 80px)',
           borderRadius: '0 0 1rem 1rem',
         }}
       >
