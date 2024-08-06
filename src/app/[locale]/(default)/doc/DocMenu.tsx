@@ -9,8 +9,8 @@ import { useTranslations } from 'next-intl'
 const DocMenu = () => {
   return (
     <div className="w-full">
-      {docMenuData.map((section, sectionIndex) => (
-        <DocMenuSection key={sectionIndex} section={section} />
+      {docMenuData.map((section) => (
+        <DocMenuSection key={section.title} section={section} />
       ))}
     </div>
   )
@@ -41,8 +41,8 @@ const DocMenuSection = ({ section }: DocMenuSectionProps) => {
       </div>
       {section.items && (
         <ul className="my-2">
-          {section.items.map((item, itemIndex) => (
-            <DocMenuItem key={itemIndex} item={item} />
+          {section.items.map((item) => (
+            <DocMenuItem key={item.title} item={item} />
           ))}
         </ul>
       )}
@@ -58,10 +58,7 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
   const t = useTranslations()
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
-  const isActivePath = (path: string) => {
-    console.log(pathname, path)
-    return pathname === path
-  }
+  const isActivePath = (path: string) => pathname === path
 
   return (
     <li className="mt-3">
@@ -96,8 +93,8 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
       </div>
       {isOpen && item.subItems && (
         <ul className="ml-1.5 mt-3 border-l border-zinc-300 pl-3 dark:border-zinc-500">
-          {item.subItems.map((subItem, subItemIndex) => (
-            <li key={subItemIndex} className="mb-3">
+          {item.subItems.map((subItem) => (
+            <li key={subItem.title} className="mb-3">
               <Link href={subItem.route}>
                 <span
                   className={cn(

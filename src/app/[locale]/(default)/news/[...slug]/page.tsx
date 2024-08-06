@@ -21,7 +21,6 @@ export default function NewsArticlePage({
     groupDir,
     locale,
   )
-  console.log(articleData)
 
   return (
     <>
