@@ -68,7 +68,9 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
       >
         {item.subItems ? (
           <>
-            <span className="flex-1 text-sm">{t(item.title)}</span>
+            <span className="flex-1 text-sm text-zinc-500 dark:text-zinc-300">
+              {t(item.title)}
+            </span>
             {isOpen ? (
               <ChevronDownIcon className="h-4 w-4" />
             ) : (
@@ -80,8 +82,9 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
             <Link href={item.route as string}>
               <span
                 className={cn(
-                  isActivePath(item.route as string) &&
-                    'text-blue-500 dark:text-blue-300',
+                  isActivePath(item.route as string)
+                    ? 'text-blue-500 dark:text-blue-300'
+                    : 'text-zinc-500 dark:text-zinc-300',
                   'flex-1 text-sm',
                 )}
               >
@@ -98,8 +101,9 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
               <Link href={subItem.route}>
                 <span
                   className={cn(
-                    isActivePath(subItem.route) &&
-                      'text-blue-500 dark:text-blue-300',
+                    isActivePath(subItem.route)
+                      ? 'text-blue-500 dark:text-blue-300'
+                      : 'text-zinc-500 dark:text-zinc-300',
                     'text-sm hover:opacity-70',
                   )}
                 >

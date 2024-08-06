@@ -83,7 +83,7 @@ export default function ArticleContents({ content }: Props) {
 
             return (
               <a
-                className="text-blue-500 underline hover:opacity-80"
+                className="underline hover:opacity-80"
                 id={props.id}
                 href={href}
                 target="_blank"
