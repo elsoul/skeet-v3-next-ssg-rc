@@ -9,6 +9,7 @@ export type PageProps = {
 
 export const getDataForPageByFilename = (filename: string) => {
   const groupDir = getGroupDir(filename)
+  console.log('groupDir', groupDir)
   return {
     groupDir,
     generateMetadata: async ({ params: { locale } }: PageProps) => {
