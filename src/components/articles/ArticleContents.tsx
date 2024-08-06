@@ -2,10 +2,10 @@ import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import remarkSlug from 'remark-slug'
 import ReactMarkdown from 'react-markdown'
-
+import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { Pluggable } from 'unified'
 import { CodeBlock } from './CodeBlock'
-import { cn } from '@/lib/utils'
+import { cn, getYouTubeVideoId, isYouTubeUrl } from '@/lib/utils'
 
 type Props = {
   content: string
@@ -63,6 +63,34 @@ export default function ArticleContents({ content }: Props) {
               <p className="mb-4 mt-3 last:mb-4" id={props.id}>
                 {children as React.ReactNode}
               </p>
+            )
+          },
+          a({ children, href, ...props }) {
+            if (!href) return null
+            const isYouTube = isYouTubeUrl(href)
+            const videoId = getYouTubeVideoId(href)
+            if (isYouTube && videoId) {
+              return (
+                <AspectRatio ratio={16 / 9}>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${videoId}`}
+                    allowFullScreen
+                    className="h-full w-full rounded-xl object-cover"
+                  />
+                </AspectRatio>
+              )
+            }
+
+            return (
+              <a
+                className="text-blue-500 underline hover:opacity-80"
+                id={props.id}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {children as React.ReactNode}
+              </a>
             )
           },
           ol({ children, ...props }) {

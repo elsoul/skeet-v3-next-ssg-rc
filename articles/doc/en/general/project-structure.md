@@ -70,3 +70,7 @@ export default async function DefaultLayout({
 }
 
 ```
+
+## YouTube Embed
+
+https://www.youtube.com/watch?v=t4KHXqguTi8
