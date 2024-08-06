@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 
 import { Pluggable } from 'unified'
 import { CodeBlock } from './CodeBlock'
+import { cn } from '@/lib/utils'
 
 type Props = {
   content: string
@@ -73,7 +74,7 @@ export default function ArticleContents({ content }: Props) {
           },
           ul({ children, ...props }) {
             return (
-              <ul className="mb-4 ml-8 mt-3 list-item" id={props.id}>
+              <ul className="mb-4 ml-8 mt-3 list-disc" id={props.id}>
                 {children as React.ReactNode}
               </ul>
             )
@@ -85,9 +86,25 @@ export default function ArticleContents({ content }: Props) {
               </li>
             )
           },
+
           code({ node, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '')
             const fileMatch = /:(.*)/.exec(className || '')
+
+            if (!match) {
+              return (
+                <code
+                  className={cn(
+                    className,
+                    'rounded-md border border-zinc-400 bg-zinc-200 p-1 text-red-500',
+                  )}
+                  {...props}
+                >
+                  {/* @ts-ignore */}
+                  {children}
+                </code>
+              )
+            }
 
             return (
               <CodeBlock

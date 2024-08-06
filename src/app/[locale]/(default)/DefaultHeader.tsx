@@ -20,7 +20,7 @@ export default function DefaultHeader() {
   return (
     <>
       <header className="sticky top-0 z-10 flex w-full flex-col gap-10 px-6 py-4 backdrop-blur-xl">
-        <div className="mx-auto flex w-full max-w-7xl flex-row items-center md:gap-20">
+        <div className="mx-auto flex w-full max-w-7xl flex-row items-center gap-2 md:gap-20">
           <LogoHorizontalLink className="w-20 sm:w-24" />
 
           <div className="hidden gap-8 md:flex md:flex-row">

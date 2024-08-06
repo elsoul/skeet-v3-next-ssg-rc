@@ -4,13 +4,38 @@ title: Getting Started
 description: Getting Started Skeet Framework
 ---
 
-## Skeet v3
+# Heading 1
 
-```shell
-pnpm add -g @skeet-framework/cli
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+**Bold Text**
+
+_Italic Text_
+
+~Strikethrough Text~
+
+- Unordered List Item 1
+- Unordered List Item 2
+  - Nested Unordered List Item 1
+  - Nested Unordered List Item 2
+
+1. Ordered List Item 1
+2. Ordered List Item 2
+   1. Nested Ordered List Item 1
+   2. Nested Ordered List Item 2
+
+Testing `Inline code snippet` like this.
+
+```javascript
+// Code block
+console.log('Hello, World!')
 ```
 
-LFGGG 🚀🔥
+---
 
 ## Code Sample
 
