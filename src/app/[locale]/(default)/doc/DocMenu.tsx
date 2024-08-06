@@ -23,10 +23,8 @@ type DocMenuSectionProps = {
 const DocMenuSection = ({ section }: DocMenuSectionProps) => {
   const t = useTranslations()
   const pathname = usePathname()
-  const isActivePath = (path: string) => {
-    console.log(pathname, path)
-    return pathname === path
-  }
+  const isActivePath = (path: string) => pathname === path
+
   return (
     <div className="p-2">
       <div className="flex cursor-pointer items-center justify-between hover:opacity-70">
