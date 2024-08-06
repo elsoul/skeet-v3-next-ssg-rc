@@ -26,9 +26,9 @@ const DocMenuSection = ({ section }: DocMenuSectionProps) => {
   const isActivePath = (path: string) => pathname === path
 
   return (
-    <div className="p-2">
+    <div className="w-full p-2">
       <div className="flex cursor-pointer items-center justify-between hover:opacity-70">
-        <Link href={section.route}>
+        <Link href={section.route} className="w-full">
           <span
             className={cn(
               isActivePath(section.route) && 'text-blue-500 dark:text-blue-300',
@@ -40,7 +40,7 @@ const DocMenuSection = ({ section }: DocMenuSectionProps) => {
         </Link>
       </div>
       {section.items && (
-        <ul className="my-2">
+        <ul className="my-2 w-full">
           {section.items.map((item) => (
             <DocMenuItem key={item.title} item={item} />
           ))}
@@ -61,9 +61,9 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
   const isActivePath = (path: string) => pathname === path
 
   return (
-    <li className="mt-3">
+    <li className="mt-3 w-full">
       <div
-        className="flex cursor-pointer items-center justify-between gap-2 hover:opacity-70"
+        className="flex cursor-pointer items-center justify-between gap-2 py-0.5 hover:opacity-70"
         onClick={() => setIsOpen(!item.subItems ? false : !isOpen)}
       >
         {item.subItems ? (
@@ -79,7 +79,7 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
           </>
         ) : (
           <>
-            <Link href={item.route as string}>
+            <Link href={item.route as string} className="w-full">
               <span
                 className={cn(
                   isActivePath(item.route as string)
@@ -95,20 +95,20 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
         )}
       </div>
       {isOpen && item.subItems && (
-        <ul className="ml-1.5 mt-3 border-l border-zinc-300 pl-3 dark:border-zinc-500">
+        <ul className="ml-1.5 mt-1 w-full border-l border-zinc-300 pl-3 dark:border-zinc-500">
           {item.subItems.map((subItem) => (
-            <li key={subItem.title} className="mb-3">
-              <Link href={subItem.route}>
-                <span
+            <li key={subItem.title} className="mb-1 w-full">
+              <Link href={subItem.route} className="w-full">
+                <p
                   className={cn(
                     isActivePath(subItem.route)
                       ? 'text-blue-500 dark:text-blue-300'
                       : 'text-zinc-500 dark:text-zinc-300',
-                    'text-sm hover:opacity-70',
+                    'w-full py-1.5 text-sm hover:opacity-70',
                   )}
                 >
                   {t(subItem.title)}
-                </span>
+                </p>
               </Link>
             </li>
           ))}
