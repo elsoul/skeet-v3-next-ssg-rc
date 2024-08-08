@@ -65,6 +65,18 @@ export default function ArticleContents({ content }: Props) {
               </p>
             )
           },
+          img({ children, ...props }) {
+            return (
+              <>
+                {/* eslint-disable */}
+                <img
+                  className="mb-6 mt-4 rounded-lg"
+                  alt={props.alt as string}
+                  src={props.src as string}
+                />
+              </>
+            )
+          },
           a({ children, href, ...props }) {
             if (!href) return null
             const isYouTube = isYouTubeUrl(href)
