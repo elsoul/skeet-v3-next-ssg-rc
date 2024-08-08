@@ -2,8 +2,12 @@
 
 import { useEffect, useState } from 'react'
 
-export function useShowHeader() {
-  const [showHeader, setShowHeader] = useState(true)
+type Props = {
+  defaultShowHeader?: boolean
+}
+
+export function useShowHeader({ defaultShowHeader = true }: Props = {}) {
+  const [showHeader, setShowHeader] = useState(defaultShowHeader)
   const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
