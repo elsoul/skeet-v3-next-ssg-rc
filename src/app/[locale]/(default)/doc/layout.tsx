@@ -17,7 +17,7 @@ export default async function DocLayout({
 
   return (
     <>
-      <div className="mx-auto max-w-7xl p-3 lg:py-8">
+      <div className="mx-auto max-w-7xl lg:py-8">
         <div className="relative grid grid-cols-1 gap-4 lg:grid-cols-9">
           <div className="max-h-full lg:col-span-2">
             <div
@@ -29,7 +29,7 @@ export default async function DocLayout({
               <DocMenu />
             </div>
           </div>
-          <div className="sm:p-4 lg:col-span-7">{children}</div>
+          <div className="lg:col-span-7">{children}</div>
         </div>
       </div>
     </>

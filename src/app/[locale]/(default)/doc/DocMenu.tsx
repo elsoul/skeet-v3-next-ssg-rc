@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl'
 
 const DocMenu = () => {
   return (
-    <div className="w-full">
+    <div className="w-full p-3">
       {docMenuData.map((section) => (
         <DocMenuSection key={section.title} section={section} />
       ))}

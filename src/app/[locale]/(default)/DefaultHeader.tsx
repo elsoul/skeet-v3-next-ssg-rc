@@ -11,35 +11,13 @@ import { defaultHeaderNav } from './defaultNavs'
 import { Link, usePathname } from '@/navigation'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
-import { useEffect, useState } from 'react'
+import { useShowHeader } from '@/hooks/utils/useShowHeader'
 
 export default function DefaultHeader() {
   const t = useTranslations()
   const pathname = usePathname()
   const isActivePath = (path: string) => pathname.includes(path)
-
-  const [showHeader, setShowHeader] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-
-      if (currentScrollY < lastScrollY) {
-        setShowHeader(true)
-      } else {
-        setShowHeader(false)
-      }
-
-      setLastScrollY(currentScrollY)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [lastScrollY])
+  const showHeader = useShowHeader()
 
   return (
     <>
