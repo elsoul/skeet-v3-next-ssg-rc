@@ -1,6 +1,6 @@
 'use client'
 
-import { HamburgerMenuIcon } from '@radix-ui/react-icons'
+import { ListBulletIcon } from '@radix-ui/react-icons'
 import { Button } from '@/components/ui/button'
 import { usePathname } from '@/navigation'
 
@@ -30,11 +30,12 @@ export default function DocMenuModalNav() {
         <SheetTrigger asChild>
           <Button
             variant="outline"
-            size="icon"
+            size="sm"
             className="shrink-0 lg:hidden"
             onClick={() => setOpen(true)}
           >
-            <HamburgerMenuIcon className="h-5 w-5" />
+            <ListBulletIcon className="h-5 w-5" />
+            <span className="ml-1 text-xs">{t('doc.nav.title')}</span>
             <span className="sr-only">{t('common.toggleNavigationMenu')}</span>
           </Button>
         </SheetTrigger>
@@ -48,6 +49,7 @@ export default function DocMenuModalNav() {
                 }}
               />
             </div>
+            <p className="text-xs">{t('doc.nav.title')}</p>
             <DocMenu />
           </nav>
           <div className="mt-auto">

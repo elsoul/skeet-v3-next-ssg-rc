@@ -1,6 +1,6 @@
 'use client'
 
-import { HamburgerMenuIcon } from '@radix-ui/react-icons'
+import { CaretDownIcon } from '@radix-ui/react-icons'
 import { Button } from '@/components/ui/button'
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
@@ -29,11 +29,12 @@ export default function TocMenuModalNav({ articleContent }: Props) {
         <SheetTrigger asChild>
           <Button
             variant="outline"
-            size="icon"
+            size="sm"
             className="shrink-0 md:hidden"
             onClick={() => setOpen(true)}
           >
-            <HamburgerMenuIcon className="h-5 w-5" />
+            <span className="text-xs">{t('common.toc')}</span>
+            <CaretDownIcon className="h-5 w-5" />
             <span className="sr-only">{t('common.toggleNavigationMenu')}</span>
           </Button>
         </SheetTrigger>

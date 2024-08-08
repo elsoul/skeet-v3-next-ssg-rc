@@ -48,7 +48,7 @@ export default function Toc({ toc, activeItemIds, modalFunction }: Props) {
         <>
           <div className="p-4 lg:ml-4">
             <p className="text-base font-semibold tracking-tight">
-              {t('common.toc')}
+              {t('common.tableOfContents')}
             </p>
           </div>
           <div className="border-l p-4 lg:ml-4">

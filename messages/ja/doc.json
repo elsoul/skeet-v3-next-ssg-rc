@@ -2,6 +2,7 @@
   "doc": {
     "title": "ドキュメント",
     "nav": {
+      "title": "ドキュメント一覧",
       "general": {
         "getting-started": "Getting Started",
         "installation": "インストール",

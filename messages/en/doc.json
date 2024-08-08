@@ -2,6 +2,7 @@
   "doc": {
     "title": "Doc",
     "nav": {
+      "title": "Doc Index",
       "general": {
         "getting-started": "Getting Started",
         "installation": "Installation",
