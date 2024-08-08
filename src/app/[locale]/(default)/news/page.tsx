@@ -14,7 +14,7 @@ export default function NewsPage({ params: { locale } }: PageProps) {
 
   const articlesData = getArticleForIndex(
     groupDir,
-    ['title', 'category', 'thumbnail', 'date', 'content'],
+    ['title', 'thumbnail', 'date'],
     locale,
   )
 
