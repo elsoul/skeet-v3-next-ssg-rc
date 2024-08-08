@@ -39,7 +39,7 @@ export default function DefaultModalNav() {
         </SheetTrigger>
         <SheetContent side="top" className="flex h-screen flex-col">
           <nav className="grid gap-2 text-lg font-medium">
-            <div className="mb-3 flex flex-row items-start">
+            <div className="mb-6 flex flex-row items-start">
               <LogoHorizontalLink
                 className="w-24"
                 onClick={() => {
@@ -53,9 +53,9 @@ export default function DefaultModalNav() {
                 key={navItem.label}
                 className={cn(
                   isActivePath(navItem.path)
-                    ? 'bg-muted text-foreground hover:text-foreground dark:bg-muted/40'
-                    : 'text-muted-foreground hover:text-foreground dark:text-foreground dark:hover:opacity-80',
-                  'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2',
+                    ? 'text-blue-500 dark:text-blue-300'
+                    : 'text-zinc-500 dark:text-zinc-300',
+                  'mx-[-0.65rem] flex items-center gap-4 px-3 py-2 text-sm hover:opacity-70',
                 )}
                 onClick={() => setOpen(false)}
               >
