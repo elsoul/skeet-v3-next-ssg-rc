@@ -8,6 +8,8 @@
     "download": "Download",
     "toggleNavigationMenu": "Toggle navigation menu",
     "tableOfContents": "Table of Contents",
-    "toc": "ToC"
+    "toc": "ToC",
+    "loadMore": "Load more",
+    "readThisArticle": "Read this article"
   }
 }

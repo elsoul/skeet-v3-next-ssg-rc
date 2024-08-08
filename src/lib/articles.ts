@@ -107,11 +107,13 @@ export const getDataForArticlePageByFilename = (filename: string) => {
   }
 }
 
+export type ArticleData = { article: Items; url: string }
+
 export const getArticleForIndex = (
   groupDir: string,
   matterArray: string[],
   locale: string,
-): { article: Items; url: string }[] => {
+): ArticleData[] => {
   const slugs: string[][] = getAllArticles(groupDir)
 
   const articles = slugs.map((slug) =>
