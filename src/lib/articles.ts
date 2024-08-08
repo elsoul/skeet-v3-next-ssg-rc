@@ -5,6 +5,10 @@ import matter from 'gray-matter'
 import { getGroupDir, uniqueArray, truncateContent } from './utils'
 import { locales } from '@/app/config'
 
+type Items = {
+  [key: string]: string | string[]
+}
+
 export const getArticleBySlug = (
   slugArray: string[],
   fields: string[] = [],
@@ -20,10 +24,6 @@ export const getArticleBySlug = (
   const fullPath = join(articlesDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
-
-  type Items = {
-    [key: string]: string | string[]
-  }
 
   const items: Items = {}
 
@@ -105,4 +105,25 @@ export const getDataForArticlePageByFilename = (filename: string) => {
       return paths
     },
   }
+}
+
+export const getArticleForIndex = (
+  groupDir: string,
+  matterArray: string[],
+  locale: string,
+): { article: Items; url: string }[] => {
+  const slugs: string[][] = getAllArticles(groupDir)
+
+  const articles = slugs.map((slug) =>
+    getArticleBySlug(slug, matterArray, groupDir, locale),
+  )
+
+  const urls = slugs.map(
+    (slug) => `/${groupDir}/${slug[0]}/${slug[1]}/${slug[2]}/${slug[3]}`,
+  )
+
+  return articles.map((article, index) => ({
+    article,
+    url: urls[index],
+  }))
 }

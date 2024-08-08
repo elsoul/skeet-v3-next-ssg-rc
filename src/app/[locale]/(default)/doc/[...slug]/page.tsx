@@ -7,7 +7,7 @@ import {
 import ScrollSyncToc from '@/components/articles/ScrollSyncToc'
 import { cn } from '@/lib/utils'
 import ArticleContents from '@/components/articles/ArticleContents'
-import MobileHeader from '../MobileHeader'
+import DocMobileHeader from '../DocMobileHeader'
 
 const { groupDir, generateMetadata, generateStaticParams } =
   getDataForArticlePageByFilename(__filename)
@@ -27,7 +27,7 @@ export default function DocArticlePage({
 
   return (
     <>
-      <MobileHeader articleContent={articleData.content as string} />
+      <DocMobileHeader articleContent={articleData.content as string} />
       <div className="grid grid-cols-1 gap-4 p-3 sm:p-4 md:grid-cols-3">
         <div className="md:col-span-2">
           <h1 className="text-3xl font-bold tracking-tight">
