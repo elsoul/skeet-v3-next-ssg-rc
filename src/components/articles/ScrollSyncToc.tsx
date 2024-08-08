@@ -14,9 +14,13 @@ const OFFSET_ACTIVE_ITEM = 128
 
 type Props = {
   rawMarkdownBody: string
+  modalFunction?: (open: boolean) => void
 }
 
-export default function ScrollSyncToc({ rawMarkdownBody }: Props) {
+export default function ScrollSyncToc({
+  rawMarkdownBody,
+  modalFunction,
+}: Props) {
   const [activeItemIds, setActiveItemIds] = useState([])
   const [itemTopOffsets, setItemTopOffsets] = useState([])
   const [toc, setToc] = useState([])
@@ -58,7 +62,11 @@ export default function ScrollSyncToc({ rawMarkdownBody }: Props) {
 
   return (
     <>
-      <Toc toc={toc} activeItemIds={activeItemIds} />
+      <Toc
+        toc={toc}
+        activeItemIds={activeItemIds}
+        modalFunction={modalFunction}
+      />
     </>
   )
 }

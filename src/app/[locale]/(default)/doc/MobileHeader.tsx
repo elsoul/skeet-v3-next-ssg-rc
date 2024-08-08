@@ -1,12 +1,14 @@
 'use client'
 import { cn } from '@/lib/utils'
 import { useShowHeader } from '@/hooks/utils/useShowHeader'
+import DocMenuModalNav from './DocMenuModalNav'
+import TocMenuModalNav from './TocMenuModalNav'
 
-type MobileHeaderProps = {
+type Props = {
   articleContent: string
 }
 
-const MobileHeader = ({ articleContent }: MobileHeaderProps) => {
+export default function MobileHeader({ articleContent }: Props) {
   const showHeader = useShowHeader()
 
   return (
@@ -17,12 +19,14 @@ const MobileHeader = ({ articleContent }: MobileHeaderProps) => {
           showHeader ? 'translate-y-0' : '-translate-y-96',
         )}
       >
-        <div>docmenu</div>
+        <div>
+          <DocMenuModalNav />
+        </div>
         <div className="flex flex-grow" />
-        <div className="md:hidden">tocmenu</div>
+        <div className="md:hidden">
+          <TocMenuModalNav articleContent={articleContent} />
+        </div>
       </div>
     </>
   )
 }
-
-export default MobileHeader

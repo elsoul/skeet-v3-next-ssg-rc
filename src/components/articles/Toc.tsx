@@ -8,9 +8,10 @@ type Props = {
     value: string
   }[]
   activeItemIds: string[]
+  modalFunction?: (open: boolean) => void
 }
 
-const OFFSET_HEIGHT = 80
+const OFFSET_HEIGHT = 128
 
 const scrollToHash = (hash: string) => {
   const element = document.getElementById(hash)
@@ -21,7 +22,7 @@ const scrollToHash = (hash: string) => {
   }
 }
 
-export default function Toc({ toc, activeItemIds }: Props) {
+export default function Toc({ toc, activeItemIds, modalFunction }: Props) {
   const t = useTranslations()
 
   const handleClick = (
@@ -29,8 +30,16 @@ export default function Toc({ toc, activeItemIds }: Props) {
     id: string,
   ) => {
     e.preventDefault()
-    scrollToHash(id)
-    history.pushState(null, '', `#${id}`)
+    if (modalFunction) {
+      modalFunction(false)
+      setTimeout(() => {
+        scrollToHash(id)
+        history.pushState(null, '', `#${id}`)
+      }, 200)
+    } else {
+      scrollToHash(id)
+      history.pushState(null, '', `#${id}`)
+    }
   }
 
   return (
