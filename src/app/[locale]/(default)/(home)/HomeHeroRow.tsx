@@ -9,10 +9,10 @@ export default function HomeHeroRow() {
   return (
     <>
       <div className="mx-auto max-w-7xl p-3">
-        <div className="mx-auto flex max-w-2xl flex-col items-center gap-8 py-24 md:py-32 lg:max-w-3xl">
+        <div className="mx-auto flex max-w-2xl flex-col items-center gap-6 py-24 md:py-32 lg:max-w-3xl">
           <h1
             className={cn(
-              'text-center text-5xl font-bold tracking-tighter sm:text-7xl lg:text-8xl',
+              'py-2 text-center text-5xl font-bold tracking-tighter sm:text-7xl lg:text-8xl',
               'bg-gradient-to-b from-zinc-600 via-zinc-700 to-zinc-800 bg-clip-text text-transparent dark:from-white dark:via-zinc-100 dark:to-zinc-300',
             )}
           >
