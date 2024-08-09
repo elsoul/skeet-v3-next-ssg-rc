@@ -1,5 +1,12 @@
 {
   "(home)": {
-    "title": "ホーム"
+    "title": "ホーム",
+    "HomeHeroRow": {
+      "title1": "そのアイデア 、",
+      "title2": "今すぐデプロイ。",
+      "subtitle1": "プロダクティビティを最大化する TypeScript",
+      "subtitle2": "フルスタックサーバーレスフレームワーク",
+      "getStarted": "はじめる"
+    }
   }
 }

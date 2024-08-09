@@ -1,5 +1,12 @@
 {
   "(home)": {
-    "title": "Home"
+    "title": "Home",
+    "HomeHeroRow": {
+      "title1": "Deploy that idea",
+      "title2": "right away.",
+      "subtitle1": "A TypeScript Full-Stack Serverless Framework",
+      "subtitle2": "to Maximize Productivity",
+      "getStarted": "Get Started"
+    }
   }
 }
