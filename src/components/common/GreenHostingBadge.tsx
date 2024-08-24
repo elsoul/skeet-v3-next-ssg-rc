@@ -1,4 +1,4 @@
-import { appInfo } from '@/app/config'
+import appInfo from '@appInfo'
 import { blurDataURL } from '@/lib/utils'
 import Image from 'next/image'
 
