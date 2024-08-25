@@ -56,3 +56,5 @@ tmp/
 
 # Selenium Profile
 .profile
+
+**/sitemap*.xml
