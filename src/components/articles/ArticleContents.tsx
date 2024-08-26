@@ -15,12 +15,12 @@ export default function ArticleContents({ content }: Props) {
   return (
     <>
       <ReactMarkdown
-        className="prose dark:prose-invert w-full break-words"
+        className="prose my-8 w-full break-words dark:prose-invert"
         remarkPlugins={[remarkGfm, remarkMath, remarkSlug as Pluggable]}
         components={{
           h1({ children, ...props }) {
             return (
-              <h1 className="mt-6 tracking-tight" id={props.id}>
+              <h1 className="tracking-tight" id={props.id}>
                 {children as React.ReactNode}
               </h1>
             )
