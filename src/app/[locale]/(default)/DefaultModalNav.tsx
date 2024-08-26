@@ -32,9 +32,9 @@ export default function DefaultModalNav() {
             size="icon"
             className="shrink-0 md:hidden"
             onClick={() => setOpen(true)}
+            aria-label={t('common.toggleNavigationMenu')}
           >
             <HamburgerMenuIcon className="h-5 w-5" />
-            <span className="sr-only">{t('common.toggleNavigationMenu')}</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="top" className="flex h-screen flex-col">

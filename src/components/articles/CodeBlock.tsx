@@ -119,22 +119,22 @@ const CodeBlock: FC<Props> = memo(({ language, value, fileName }) => {
             className="hover:bg-zinc-600 hover:text-white focus-visible:ring-1 focus-visible:ring-zinc-700 focus-visible:ring-offset-0"
             onClick={downloadAsFile}
             size="icon"
+            aria-label={t('common.download')}
           >
             <DownloadIcon className="h-4 w-4" />
-            <span className="sr-only">{t('common.download')}</span>
           </Button>
           <Button
             variant="ghost"
             size="icon"
             className="text-xs hover:bg-zinc-600 hover:text-white focus-visible:ring-1 focus-visible:ring-zinc-700 focus-visible:ring-offset-0"
             onClick={onCopy}
+            aria-label={t('common.copyCode')}
           >
             {isCopied ? (
               <CheckIcon className="h-4 w-4" />
             ) : (
               <ClipboardCopyIcon className="h-4 w-4" />
             )}
-            <span className="sr-only">{t('common.copyCode')}</span>
           </Button>
         </div>
       </div>

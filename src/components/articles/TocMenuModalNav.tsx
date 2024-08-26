@@ -32,10 +32,10 @@ export default function TocMenuModalNav({ articleContent }: Props) {
             size="sm"
             className="shrink-0 md:hidden"
             onClick={() => setOpen(true)}
+            aria-label={t('common.toggleNavigationMenu')}
           >
             <span className="text-xs">{t('common.toc')}</span>
             <CaretDownIcon className="h-5 w-5" />
-            <span className="sr-only">{t('common.toggleNavigationMenu')}</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="top" className="flex h-screen flex-col">

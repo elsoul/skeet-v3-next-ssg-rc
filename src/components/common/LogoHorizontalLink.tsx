@@ -18,8 +18,7 @@ export default function LogoHorizontalLink({
   const t = useTranslations()
   return (
     <>
-      <Link href={href} {...rest}>
-        <span className="sr-only">{t('metadata.appTitle')}</span>
+      <Link href={href} {...rest} aria-label={t('metadata.appTitle')}>
         <Image
           src={logoHorizontal}
           alt={t('metadata.appTitle')}

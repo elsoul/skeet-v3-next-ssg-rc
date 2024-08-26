@@ -33,10 +33,10 @@ export default function DocMenuModalNav() {
             size="sm"
             className="shrink-0 lg:hidden"
             onClick={() => setOpen(true)}
+            aria-label={t('common.toggleNavigationMenu')}
           >
             <ListBulletIcon className="h-5 w-5" />
             <span className="ml-1 text-xs">{t('doc.nav.title')}</span>
-            <span className="sr-only">{t('common.toggleNavigationMenu')}</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="top" className="flex h-screen flex-col">
