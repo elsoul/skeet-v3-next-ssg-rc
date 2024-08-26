@@ -18,6 +18,20 @@ const config = {
       },
     },
     extend: {
+      typography: (theme: any) => ({
+        DEFAULT: {
+          css: {
+            pre: {
+              fontSize: 'inherit',
+              background: 'none',
+              color: 'inherit',
+              boxShadow: 'none',
+              padding: '0',
+              margin: '0',
+            },
+          },
+        },
+      }),
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -74,7 +88,11 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate'), require('tailwind-scrollbar')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwindcss-animate'),
+    require('tailwind-scrollbar'),
+  ],
 } satisfies Config
 
 export default config
