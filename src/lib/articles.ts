@@ -106,10 +106,7 @@ export const getDataForArticlePageByFilename = (filename: string) => {
     },
     getArticlePaths: () => {
       const articles = getAllArticles(groupDir)
-      // Now only for News format
-      return articles.map(
-        (slug) => `/${slug[0]}/${slug[1]}/${slug[2]}/${slug[3]}`,
-      )
+      return articles.map((slug) => `/${slug.join('/')}`)
     },
   }
 }
@@ -127,13 +124,49 @@ export const getArticleForIndex = (
     getArticleBySlug(slug, matterArray, groupDir, locale),
   )
 
-  // Now only for News format
-  const urls = slugs.map(
-    (slug) => `/${groupDir}/${slug[0]}/${slug[1]}/${slug[2]}/${slug[3]}`,
-  )
+  const urls = slugs.map((slug) => `/${groupDir}/${slug.join('/')}`)
 
   return articles.map((article, index) => ({
     article,
     url: urls[index],
   }))
+}
+
+export type SubItem = {
+  title: string
+  route: string
+}
+
+export type Item = {
+  title: string
+  route?: string
+  subItems?: SubItem[]
+}
+
+export type Section = {
+  title: string
+  route: string
+  items?: Item[]
+}
+
+export const getAllRoutes = (menuData: Section[]) => {
+  const routes: string[] = []
+
+  const collectRoutes = (items: any[]) => {
+    items.forEach((item) => {
+      if (item.route) {
+        routes.push(item.route)
+      }
+      if (item.items) {
+        collectRoutes(item.items)
+      }
+      if (item.subItems) {
+        collectRoutes(item.subItems)
+      }
+    })
+  }
+
+  collectRoutes(menuData)
+
+  return routes
 }

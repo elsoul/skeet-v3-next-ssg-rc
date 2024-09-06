@@ -8,14 +8,20 @@ type Props = {
   articlePaths: string[]
 }
 
-// Now only for News Format
 export function usePagerData({ slug, groupDir, locale, articlePaths }: Props) {
   const pagerData = useMemo(() => {
     const articleLength = articlePaths.length
-    const currentPath = `/${slug[0]}/${slug[1]}/${slug[2]}/${slug[3]}`
+    const currentPath = `/${slug.join('/')}`
     const currentIndex = articlePaths.indexOf(currentPath)
     const isFirst = currentIndex === 0
     const isLast = currentIndex === articleLength - 1
+
+    if (isFirst && isLast) {
+      return {
+        nextRoute: null,
+        previousRoute: null,
+      }
+    }
 
     if (isFirst) {
       const nextRoutePath = articlePaths[currentIndex + 1]

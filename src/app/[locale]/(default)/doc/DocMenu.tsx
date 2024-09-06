@@ -1,7 +1,8 @@
 'use client'
 import { useState } from 'react'
 import { Link, usePathname } from '@/navigation'
-import { docMenuData, Item, Section } from './docNavs'
+import { docMenuData } from './docNavs'
+import { Item, Section } from '@/lib/articles'
 import { ChevronRightIcon, ChevronDownIcon } from '@radix-ui/react-icons'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
@@ -23,7 +24,7 @@ type DocMenuSectionProps = {
 const DocMenuSection = ({ section }: DocMenuSectionProps) => {
   const t = useTranslations()
   const pathname = usePathname()
-  const isActivePath = (path: string) => pathname === path
+  const isActivePath = (path: string) => pathname.includes(path)
 
   return (
     <div className="w-full p-2">
@@ -58,7 +59,7 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
   const t = useTranslations()
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
-  const isActivePath = (path: string) => pathname === path
+  const isActivePath = (path: string) => pathname.includes(path)
 
   return (
     <li className="mt-3 w-full">

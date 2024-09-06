@@ -28,7 +28,7 @@ export default function HomeHeroRow() {
             {t('(home).HomeHeroRow.subtitle1')} <br />
             {t('(home).HomeHeroRow.subtitle2')}
           </p>
-          <Link href="/doc/general/getting-started/">
+          <Link href="/doc/general/getting-started">
             <Button>{t('(home).HomeHeroRow.getStarted')}</Button>
           </Link>
         </div>

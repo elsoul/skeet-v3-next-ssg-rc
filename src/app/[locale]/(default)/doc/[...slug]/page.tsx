@@ -3,11 +3,15 @@ import {
   ArticlePageProps,
   getDataForArticlePageByFilename,
   getArticleBySlug,
+  getAllRoutes,
 } from '@/lib/articles'
 import ScrollSyncToc from '@/components/articles/ScrollSyncToc'
 import { cn } from '@/lib/utils'
 import ArticleContents from '@/components/articles/ArticleContents'
 import DocMobileHeader from '../DocMobileHeader'
+import { docMenuData } from '../docNavs'
+import { usePagerData } from '@/hooks/articles/usePagerData'
+import ArticlePager from '@/components/articles/ArticlePager'
 
 const { groupDir, generateMetadata, generateStaticParams } =
   getDataForArticlePageByFilename(__filename)
@@ -24,6 +28,17 @@ export default function DocArticlePage({
     groupDir,
     locale,
   )
+  const allRoutes = getAllRoutes(docMenuData)
+  const articlePaths = allRoutes.map(
+    (route) => `/${route.split('/').slice(2).join('/')}`,
+  )
+
+  const pagerData = usePagerData({
+    slug,
+    groupDir,
+    locale,
+    articlePaths,
+  })
 
   return (
     <>
@@ -34,6 +49,9 @@ export default function DocArticlePage({
             {articleData.title}
           </h1>
           <ArticleContents content={articleData.content as string} />
+          <div className="my-16">
+            <ArticlePager pagerData={pagerData} />
+          </div>
         </div>
         <div className="max-h-full md:col-span-1">
           <div

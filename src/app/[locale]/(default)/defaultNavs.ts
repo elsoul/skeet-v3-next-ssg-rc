@@ -1,8 +1,8 @@
 export enum DEFAULT_PATHS {
   home = '/',
-  doc = '/doc/general/getting-started/',
-  news = '/news/',
-  privacy = '/legal/privacy-policy/',
+  doc = '/doc/general/getting-started',
+  news = '/news',
+  privacy = '/legal/privacy-policy',
 }
 
 export const defaultHeaderNav = [
