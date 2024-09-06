@@ -10,6 +10,8 @@
     "tableOfContents": "Table of Contents",
     "toc": "ToC",
     "loadMore": "Load more",
-    "readThisArticle": "Read this article"
+    "readThisArticle": "Read this article",
+    "toNext": "Next",
+    "toPrevious": "Previous"
   }
 }

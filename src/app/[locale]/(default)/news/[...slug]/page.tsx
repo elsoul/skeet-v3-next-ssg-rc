@@ -13,8 +13,10 @@ import Image from 'next/image'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { useTranslations } from 'next-intl'
 import ArticleIndex from '@/components/articles/ArticleIndex'
+import { usePagerData } from '@/hooks/articles/usePagerData'
+import ArticlePager from '@/components/articles/ArticlePager'
 
-const { groupDir, generateMetadata, generateStaticParams } =
+const { groupDir, generateMetadata, generateStaticParams, getArticlePaths } =
   getDataForArticlePageByFilename(__filename)
 export { generateMetadata, generateStaticParams }
 
@@ -36,6 +38,13 @@ export default function NewsArticlePage({
     ['title', 'thumbnail', 'date'],
     locale,
   )
+
+  const pagerData = usePagerData({
+    slug,
+    groupDir,
+    locale,
+    articlePaths: getArticlePaths(),
+  })
 
   return (
     <>
@@ -67,6 +76,9 @@ export default function NewsArticlePage({
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <div className="p-4 md:col-span-2">
             <ArticleContents content={articleData.content as string} />
+            <div className="my-16">
+              <ArticlePager pagerData={pagerData} />
+            </div>
           </div>
 
           <div className="max-h-full p-4 md:col-span-1">
@@ -81,10 +93,12 @@ export default function NewsArticlePage({
           </div>
         </div>
       </div>
-      <h2 className="my-6 px-3 text-center text-3xl font-bold tracking-tight">
-        {t('news.latestNews')}
-      </h2>
-      <ArticleIndex articlesData={articlesData} showItemsNum={3} />
+      <div className="my-16">
+        <h2 className="my-6 px-3 text-center text-3xl font-bold tracking-tight">
+          {t('news.latestNews')}
+        </h2>
+        <ArticleIndex articlesData={articlesData} showItemsNum={3} />
+      </div>
     </>
   )
 }

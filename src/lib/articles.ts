@@ -104,6 +104,13 @@ export const getDataForArticlePageByFilename = (filename: string) => {
       })
       return paths
     },
+    getArticlePaths: () => {
+      const articles = getAllArticles(groupDir)
+      // Now only for News format
+      return articles.map(
+        (slug) => `/${slug[0]}/${slug[1]}/${slug[2]}/${slug[3]}`,
+      )
+    },
   }
 }
 
@@ -120,6 +127,7 @@ export const getArticleForIndex = (
     getArticleBySlug(slug, matterArray, groupDir, locale),
   )
 
+  // Now only for News format
   const urls = slugs.map(
     (slug) => `/${groupDir}/${slug[0]}/${slug[1]}/${slug[2]}/${slug[3]}`,
   )
