@@ -53,7 +53,10 @@ export default function NewsArticlePage({
         articleContent={articleData.content as string}
       />
       <div className="mx-auto max-w-4xl p-3 py-8 pt-24 text-center">
-        <time dateTime={articleData.date as string} className="text-zinc-500">
+        <time
+          dateTime={articleData.date as string}
+          className="text-zinc-500 dark:text-zinc-400"
+        >
           {articleData.date}
         </time>
         <h1 className="py-6 text-4xl font-medium tracking-tight md:text-5xl">

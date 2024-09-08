@@ -47,7 +47,7 @@ export default function ArticleIndex({
                 <Link href={url} className="hover:opacity-80">
                   <time
                     dateTime={article.date as string}
-                    className="text-xs text-zinc-500"
+                    className="text-xs text-zinc-500 dark:text-zinc-400"
                   >
                     {article.date}
                   </time>
