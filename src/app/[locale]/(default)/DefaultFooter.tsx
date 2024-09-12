@@ -24,8 +24,8 @@ export default function DefaultFooter() {
   return (
     <>
       <footer className="mx-auto flex w-full max-w-7xl flex-col gap-10 border-t border-zinc-200 px-6 pb-8 pt-10 dark:border-zinc-500">
-        <div className="flex w-full flex-col items-start justify-between gap-8 sm:flex-row">
-          <div className="flex w-full justify-between sm:h-36 sm:flex-col">
+        <div className="flex w-full flex-col items-stretch justify-between gap-8 sm:flex-row">
+          <div className="flex w-full justify-between sm:flex-col">
             <LogoHorizontalLink className="w-24" />
             <div className="flex flex-row items-center gap-4">
               <GithubIconLink />

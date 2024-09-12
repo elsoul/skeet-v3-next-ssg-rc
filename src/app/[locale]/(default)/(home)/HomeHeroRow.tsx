@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { mainShardGradation } from '@/lib/decoration'
 import { cn } from '@/lib/utils'
 import { Link } from '@/navigation'
 import { useTranslations } from 'next-intl'
@@ -13,7 +14,7 @@ export default function HomeHeroRow() {
           <h1
             className={cn(
               'py-2 text-center text-5xl font-bold tracking-tighter sm:text-7xl lg:text-8xl',
-              'bg-gradient-to-b from-zinc-600 via-zinc-700 to-zinc-800 bg-clip-text text-transparent dark:from-white dark:via-zinc-100 dark:to-zinc-300',
+              mainShardGradation,
             )}
           >
             {t('(home).HomeHeroRow.title1')} <br />
@@ -22,7 +23,7 @@ export default function HomeHeroRow() {
           <p
             className={cn(
               'max-w-96 text-center font-medium sm:max-w-lg sm:text-xl lg:max-w-xl lg:text-2xl',
-              'text-zinc-600 dark:text-zinc-200',
+              'text-zinc-500 dark:text-zinc-200',
             )}
           >
             {t('(home).HomeHeroRow.subtitle1')} <br />
