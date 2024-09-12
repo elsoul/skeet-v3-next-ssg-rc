@@ -50,7 +50,7 @@ export default function ArticlePager({ pagerData }: Props) {
                 {t('common.toNext')}
                 <ArrowRightIcon className="ml-1.5 h-5 w-5" />
               </p>
-              <p className="mt-2 text-right text-xs font-light text-zinc-500">
+              <p className="mt-2 text-right text-xs font-light text-zinc-500 dark:text-zinc-400">
                 {pagerData.nextRoute.title}
               </p>
             </Link>
