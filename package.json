@@ -18,7 +18,7 @@
     "preview": "pnpm build && wrangler pages dev ./out",
     "deploy": "pnpm build && wrangler pages deploy",
     "npm:update": "pnpm update \"!eslint\" --latest",
-    "ui:add": "pnpm dlx shadcn-ui@latest add"
+    "ui:add": "pnpm dlx shadcn@latest add"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.2",
