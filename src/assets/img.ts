@@ -1,5 +1,19 @@
 import logoHorizontal from '@/assets/img/logo/SkeetLogoHorizontal.svg'
-import logoHorizontalInvert from '@/assets/img/logo/SkeetLogoHorizontalInvert.svg'
+import logoHorizontalInvert from '@/assets/img/logo/SkeetLogoInvertHorizontal.svg'
+
+import CloudFlareLogoHorizontal from '@/assets/img/logo/partners/CloudFlareLogoHorizontal.svg'
+import CloudFlareLogoInvertHorizontal from '@/assets/img/logo/partners/CloudFlareLogoInvertHorizontal.svg'
+import SolanaLogoHorizontal from '@/assets/img/logo/partners/SolanaLogoHorizontal.svg'
+import SolanaLogoInvertHorizontal from '@/assets/img/logo/partners/SolanaLogoInvertHorizontal.svg'
+import ExpoLogoHorizontal from '@/assets/img/logo/partners/ExpoLogoHorizontal.svg'
+import ExpoLogoInvertHorizontal from '@/assets/img/logo/partners/ExpoLogoInvertHorizontal.svg'
+import NeonLogoHorizontal from '@/assets/img/logo/partners/NeonLogoHorizontal.svg'
+import NeonLogoInvertHorizontal from '@/assets/img/logo/partners/NeonLogoInvertHorizontal.svg'
+import NextLogoHorizontal from '@/assets/img/logo/partners/NextLogoHorizontal.svg'
+import NextLogoInvertHorizontal from '@/assets/img/logo/partners/NextLogoInvertHorizontal.svg'
+import PrismaLogoHorizontal from '@/assets/img/logo/partners/PrismaLogoHorizontal.svg'
+import PrismaLogoInvertHorizontal from '@/assets/img/logo/partners/PrismaLogoInvertHorizontal.svg'
+import TypeScriptLogoHorizontal from '@/assets/img/logo/partners/TypeScriptLogoHorizontal.svg'
 
 import OPOSClimate from '@/assets/img/icon/opos/Climate.png'
 import OPOSClosedCube from '@/assets/img/icon/opos/ClosedCube.png'
@@ -23,6 +37,19 @@ import ERPCProductImg from '@/assets/img/products/ERPC.jpg'
 export {
   logoHorizontal,
   logoHorizontalInvert,
+  CloudFlareLogoHorizontal,
+  CloudFlareLogoInvertHorizontal,
+  SolanaLogoHorizontal,
+  SolanaLogoInvertHorizontal,
+  ExpoLogoHorizontal,
+  ExpoLogoInvertHorizontal,
+  NeonLogoHorizontal,
+  NeonLogoInvertHorizontal,
+  NextLogoHorizontal,
+  NextLogoInvertHorizontal,
+  PrismaLogoHorizontal,
+  PrismaLogoInvertHorizontal,
+  TypeScriptLogoHorizontal,
   OPOSClimate,
   OPOSClosedCube,
   OPOSCompressedCoil,

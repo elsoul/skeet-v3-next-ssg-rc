@@ -1,10 +1,21 @@
 'use client'
 
 import {
+  CloudFlareLogoHorizontal,
+  CloudFlareLogoInvertHorizontal,
+  ExpoLogoHorizontal,
+  ExpoLogoInvertHorizontal,
+  NeonLogoHorizontal,
+  NeonLogoInvertHorizontal,
+  NextLogoHorizontal,
+  NextLogoInvertHorizontal,
   OPOSCompressedCoil,
-  OPOSConsensus,
-  OPOSOpenCube,
   OPOSSagaPhone,
+  PrismaLogoHorizontal,
+  PrismaLogoInvertHorizontal,
+  SolanaLogoHorizontal,
+  SolanaLogoInvertHorizontal,
+  TypeScriptLogoHorizontal,
 } from '@/assets/img'
 import { Button } from '@/components/ui/button'
 import appInfo from '@appInfo'
@@ -16,36 +27,53 @@ import { Link } from '@/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { useTheme } from 'next-themes'
-import { DEFAULT_PATHS } from '../defaultNavs'
-import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-// const logos = [
-//   {
-//     title: 'SolanaFoundation',
-//     logo: SolanaFoundationLogoHorizontal,
-//     logoInvert: SolanaFoundationLogoInvertHorizontal,
-//     href: SOLANA_VALIDATOR_LINK,
-//   },
-//   {
-//     title: 'Agave',
-//     logo: AgaveLogoHorizontal,
-//     logoInvert: AgaveLogoInvertHorizontal,
-//     href: AGAVE_VAILDATOR_LINK,
-//   },
-//   {
-//     title: 'Jito',
-//     logo: JitoFoundationLogoHorizontal,
-//     logoInvert: JitoFoundationLogoInvertHorizontal,
-//     href: JITO_VAILDATOR_LINK,
-//   },
-//   {
-//     title: 'Firedancer',
-//     logo: FiredancerLogoHorizontal,
-//     logoInvert: FiredancerLogoInvertHorizontal,
-//     href: FIREDANCER_VAILDATOR_LINK,
-//   },
-// ]
+const logos = [
+  {
+    title: 'CloudFlare',
+    logo: CloudFlareLogoHorizontal,
+    logoInvert: CloudFlareLogoInvertHorizontal,
+    href: 'https://cloudflare.com/',
+  },
+  {
+    title: 'Neon',
+    logo: NeonLogoHorizontal,
+    logoInvert: NeonLogoInvertHorizontal,
+    href: 'https://neon.tech/',
+  },
+  {
+    title: 'TypeScript',
+    logo: TypeScriptLogoHorizontal,
+    logoInvert: TypeScriptLogoHorizontal,
+    href: 'https://typescriptlang.org/',
+  },
+  {
+    title: 'Prisma',
+    logo: PrismaLogoHorizontal,
+    logoInvert: PrismaLogoInvertHorizontal,
+    href: 'https://prisma.io/',
+  },
+  {
+    title: 'Solana',
+    logo: SolanaLogoHorizontal,
+    logoInvert: SolanaLogoInvertHorizontal,
+    href: 'https://solana.com/',
+  },
+  {
+    title: 'Next',
+    logo: NextLogoHorizontal,
+    logoInvert: NextLogoInvertHorizontal,
+    href: 'https://nextjs.org/',
+  },
+  {
+    title: 'Expo',
+    logo: ExpoLogoHorizontal,
+    logoInvert: ExpoLogoInvertHorizontal,
+    href: 'https://expo.dev/',
+  },
+]
 
 export default function HomeHeroRow() {
   const t = useTranslations()
@@ -77,7 +105,7 @@ export default function HomeHeroRow() {
           />
         </div>
 
-        <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-6 py-24 md:py-40 lg:max-w-3xl">
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-6 py-24 md:py-40 lg:max-w-4xl">
           <h1
             className={cn(
               'py-2 text-center text-4xl font-bold tracking-tighter sm:text-7xl lg:text-7xl',
@@ -102,7 +130,7 @@ export default function HomeHeroRow() {
               <Button>{t('common.aiChat')}</Button>
             </Link>
             <Link
-              href={appInfo.githubRepo}
+              href={`https://github.com/${appInfo.githubRepo}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -112,8 +140,8 @@ export default function HomeHeroRow() {
               </Button>
             </Link>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {/* {logos.map((item) => (
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+            {logos.map((item) => (
               <Link
                 key={item.title}
                 href={item.href}
@@ -124,12 +152,12 @@ export default function HomeHeroRow() {
                 <Image
                   src={theme === 'light' ? item.logo : item.logoInvert}
                   alt={item.title}
-                  className="w-20 sm:w-24 md:w-28"
+                  className="w-20 lg:w-24"
                   unoptimized
                   width={256}
                 />
               </Link>
-            ))} */}
+            ))}
           </div>
         </div>
       </div>
