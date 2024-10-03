@@ -66,7 +66,7 @@ Open [http://localhost:4242](http://localhost:4242) with your browser to see the
 ### Add Components
 
 <a href="https://ui.shadcn.com/">
-  <img src="https://pub-f5c1b877dd3a4b63aacd87ee9a480be9.r2.dev/shadcnUI.jpg" alt="shadcn/ui" />
+  <img src="https://storage.skeet.dev/shadcnUI.jpg" alt="shadcn/ui" />
 </a>
 
 You can add the high-quality UI components from [shadcn/ui](https://ui.shadcn.com/)
@@ -79,7 +79,7 @@ pnpm add:ui button
 You can also use [v0](https://v0.dev/) which is a UI generator with shadcn/ui from simple text prompts and images.
 
 <a href="https://v0.dev/">
-  <img src="https://pub-f5c1b877dd3a4b63aacd87ee9a480be9.r2.dev/v0.jpg" alt="v0" />
+  <img src="https://storage.skeet.dev/v0.jpg" alt="v0" />
 </a>
 
 ## References
@@ -90,7 +90,7 @@ You can also use [v0](https://v0.dev/) which is a UI generator with shadcn/ui fr
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/elsoul/skeet-v3-next-edge-rc This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/elsoul/skeet-v3-next-ssg-rc This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -98,4 +98,4 @@ The package is available as open source under the terms of the [Apache-2.0 Licen
 
 ## Code of Conduct
 
-Everyone interacting in the SKEET project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/elsoul/skeet-v3-next-edge-rc/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Skeet project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/elsoul/skeet-v3-next-ssg-rc/blob/master/CODE_OF_CONDUCT.md).
