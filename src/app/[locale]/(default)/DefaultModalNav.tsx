@@ -3,6 +3,7 @@
 import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 import { Button } from '@/components/ui/button'
 import { Link, usePathname } from '@/navigation'
+import appInfo from '@appInfo'
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
@@ -62,6 +63,11 @@ export default function DefaultModalNav() {
                 {t(navItem.label)}
               </Link>
             ))}
+            <div className="mt-8">
+              <Link href={appInfo.loginUrl}>
+                <Button>{t('common.aiChat')}</Button>
+              </Link>
+            </div>
           </nav>
           <div className="mt-auto">
             <div className="flex flex-row gap-3">

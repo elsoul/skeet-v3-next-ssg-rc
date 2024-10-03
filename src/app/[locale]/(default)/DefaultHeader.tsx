@@ -1,17 +1,15 @@
 'use client'
 
 import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
-import {
-  DiscordIconLink,
-  GithubIconLink,
-  TwitterIconLink,
-} from '@/components/common/icons'
+import appInfo from '@appInfo'
 import DefaultModalNav from './DefaultModalNav'
 import { defaultHeaderNav } from './defaultNavs'
 import { Link, usePathname } from '@/navigation'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
 import { useShowHeader } from '@/hooks/utils/useShowHeader'
+import { Button } from '@/components/ui/button'
+import { GithubIconLink } from '@/components/common/icons'
 
 export default function DefaultHeader() {
   const t = useTranslations()
@@ -48,10 +46,11 @@ export default function DefaultHeader() {
           <div className="flex flex-grow" />
           <div className="flex flex-row items-start justify-center gap-3">
             <DefaultModalNav />
-            <div className="hidden gap-4 md:flex md:flex-row">
+            <div className="hidden items-center gap-4 md:flex md:flex-row">
+              <Link href={appInfo.loginUrl}>
+                <Button>{t('common.aiChat')}</Button>
+              </Link>
               <GithubIconLink />
-              <TwitterIconLink />
-              <DiscordIconLink />
             </div>
           </div>
         </div>

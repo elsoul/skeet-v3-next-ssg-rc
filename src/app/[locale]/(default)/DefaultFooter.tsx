@@ -49,7 +49,18 @@ export default function DefaultFooter() {
               </Link>
             ))}
           </div>
-          <div className="flex w-full flex-col"></div>
+          <div className="flex w-full flex-col">
+            <Link
+              href={appInfo.loginUrl}
+              className={cn(
+                'text-zinc-500 dark:text-zinc-300',
+                'flex items-center gap-4 py-2 text-sm hover:opacity-70',
+              )}
+              target="_blank"
+            >
+              {t('common.aiChat')}
+            </Link>
+          </div>
           <div className="flex w-full flex-col">
             <div className="max-w-40 sm:ml-auto">
               <GreenHostingBadge />

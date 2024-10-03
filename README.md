@@ -1,10 +1,10 @@
 <p align="center">
   <a href="https://skeet.dev/en/">
-    <img src="https://user-images.githubusercontent.com/20677823/221215449-93a7b5a8-5f33-4da8-9dd4-d0713db0a280.png" alt="Skeet" />
+    <img src="https://storage.skeet.dev/ogp.jpg" alt="Skeet" />
   </a>
 
-  <a href="https://twitter.com/intent/follow?screen_name=ELSOUL_LABO2">
-    <img src="https://img.shields.io/twitter/follow/ELSOUL_LABO2.svg?label=Follow%20@ELSOUL_LABO2" alt="Follow @ELSOUL_LABO2" />
+  <a href="https://twitter.com/intent/follow?screen_name=SkeetDev">
+    <img src="https://img.shields.io/twitter/follow/SkeetDev.svg?label=Follow%20@SkeetDev" alt="Follow @SkeetDev" />
   </a>
   <br/>
   <a aria-label="npm version" href="https://www.npmjs.com/package/@skeet-framework/cli">
@@ -23,7 +23,7 @@
 
 This is the RC for the docs code of skeet v3.
 
-Demo: https://skeet-v3-next-ssg-rc.pages.dev/
+Demo: https://skeeter.dev/
 
 ## Features
 
@@ -33,8 +33,8 @@ Demo: https://skeet-v3-next-ssg-rc.pages.dev/
 - React Compiler (Always optimizes memoization for production)
 - Green Coding
 
-<a href="https://www.thegreenwebfoundation.org/green-web-check/?url=https%3A%2F%2Fskeet-v3-next-ssg-rc.pages.dev%2F">
-  <img src="https://app.greenweb.org/api/v3/greencheckimage/skeet-v3-next-ssg-rc.pages.dev?nocache=true" alt="This website runs on green hosting - verified by thegreenwebfoundation.org" width="200px" height="95px">
+<a href="https://www.thegreenwebfoundation.org/green-web-check/?url=https%3A%2F%2Fskeeter.dev%2F">
+  <img src="https://app.greenweb.org/api/v3/greencheckimage/skeeter.dev?nocache=true" alt="This website runs on green hosting - verified by thegreenwebfoundation.org" width="200px" height="95px">
 </a>
 
 ## Built with

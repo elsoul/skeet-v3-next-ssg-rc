@@ -2,11 +2,11 @@
   "(home)": {
     "title": "Home",
     "HomeHeroRow": {
-      "title1": "Deploy that idea",
-      "title2": "right away.",
-      "subtitle1": "A TypeScript Full-Stack Serverless Framework",
-      "subtitle2": "to Maximize Productivity",
-      "getStarted": "Get Started"
+      "title1": "The Complete",
+      "title2": "Web Framework",
+      "title3": "for Modern Developers",
+      "subtitle1": "Currently under development for v3 release",
+      "subtitle2": "This is a demo of the RC version"
     }
   }
 }

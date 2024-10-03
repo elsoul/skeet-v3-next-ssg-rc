@@ -2,11 +2,11 @@
   "(home)": {
     "title": "ホーム",
     "HomeHeroRow": {
-      "title1": "そのアイデア 、",
-      "title2": "今すぐデプロイ。",
-      "subtitle1": "プロダクティビティを最大化する TypeScript",
-      "subtitle2": "フルスタックサーバーレスフレームワーク",
-      "getStarted": "はじめる"
+      "title1": "The Complete",
+      "title2": "Web Framework",
+      "title3": "for Modern Developers",
+      "subtitle1": "現在 v3 リリースに向けて開発中",
+      "subtitle2": "こちらは RC バージョンのデモです"
     }
   }
 }

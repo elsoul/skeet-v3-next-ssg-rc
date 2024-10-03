@@ -1,37 +1,136 @@
+'use client'
+
+import {
+  OPOSCompressedCoil,
+  OPOSConsensus,
+  OPOSOpenCube,
+  OPOSSagaPhone,
+} from '@/assets/img'
 import { Button } from '@/components/ui/button'
+import appInfo from '@appInfo'
+
 import { mainShardGradation } from '@/lib/decoration'
+
 import { cn } from '@/lib/utils'
 import { Link } from '@/navigation'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import Image from 'next/image'
+import { useTheme } from 'next-themes'
+import { DEFAULT_PATHS } from '../defaultNavs'
+import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+// const logos = [
+//   {
+//     title: 'SolanaFoundation',
+//     logo: SolanaFoundationLogoHorizontal,
+//     logoInvert: SolanaFoundationLogoInvertHorizontal,
+//     href: SOLANA_VALIDATOR_LINK,
+//   },
+//   {
+//     title: 'Agave',
+//     logo: AgaveLogoHorizontal,
+//     logoInvert: AgaveLogoInvertHorizontal,
+//     href: AGAVE_VAILDATOR_LINK,
+//   },
+//   {
+//     title: 'Jito',
+//     logo: JitoFoundationLogoHorizontal,
+//     logoInvert: JitoFoundationLogoInvertHorizontal,
+//     href: JITO_VAILDATOR_LINK,
+//   },
+//   {
+//     title: 'Firedancer',
+//     logo: FiredancerLogoHorizontal,
+//     logoInvert: FiredancerLogoInvertHorizontal,
+//     href: FIREDANCER_VAILDATOR_LINK,
+//   },
+// ]
 
 export default function HomeHeroRow() {
   const t = useTranslations()
+  const locale = useLocale()
+  const { theme } = useTheme()
 
   return (
     <>
-      <div className="mx-auto max-w-7xl p-3">
-        <div className="mx-auto flex max-w-2xl flex-col items-center gap-6 py-24 md:py-32 lg:max-w-3xl">
+      <div className="relative mx-auto max-w-7xl p-3">
+        <div className="absolute left-0 top-0 -z-10 opacity-20 dark:opacity-40">
+          <Image
+            src={OPOSCompressedCoil}
+            alt="Background"
+            className="h-48 w-48 sm:h-64 sm:w-64 md:h-96 md:w-96 lg:h-[512px] lg:w-[512px]"
+            unoptimized
+            width={256}
+            height={256}
+          />
+        </div>
+
+        <div className="absolute bottom-0 right-0 -z-10 opacity-20 dark:opacity-40">
+          <Image
+            src={OPOSSagaPhone}
+            alt="Background"
+            className="h-56 w-56 sm:h-64 sm:w-64 md:h-96 md:w-96 lg:h-[512px] lg:w-[512px]"
+            unoptimized
+            width={256}
+            height={256}
+          />
+        </div>
+
+        <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-6 py-24 md:py-40 lg:max-w-3xl">
           <h1
             className={cn(
-              'py-2 text-center text-5xl font-bold tracking-tighter sm:text-7xl lg:text-8xl',
+              'py-2 text-center text-4xl font-bold tracking-tighter sm:text-7xl lg:text-7xl',
               mainShardGradation,
             )}
           >
             {t('(home).HomeHeroRow.title1')} <br />
-            {t('(home).HomeHeroRow.title2')}
+            {t('(home).HomeHeroRow.title2')} <br />
+            {t('(home).HomeHeroRow.title3')}
           </h1>
           <p
             className={cn(
-              'max-w-96 text-center font-medium sm:max-w-lg sm:text-xl lg:max-w-xl lg:text-2xl',
-              'text-zinc-500 dark:text-zinc-200',
+              '-mt-4 max-w-96 text-center text-sm font-medium sm:max-w-lg sm:text-lg lg:-mt-2 lg:max-w-xl lg:text-xl',
+              'text-zinc-500 dark:text-zinc-300',
             )}
           >
             {t('(home).HomeHeroRow.subtitle1')} <br />
             {t('(home).HomeHeroRow.subtitle2')}
           </p>
-          <Link href="/doc/general/getting-started">
-            <Button>{t('(home).HomeHeroRow.getStarted')}</Button>
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link href={appInfo.loginUrl}>
+              <Button>{t('common.aiChat')}</Button>
+            </Link>
+            <Link
+              href={appInfo.githubRepo}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline">
+                <FontAwesomeIcon icon={faGithub} className="mr-2 h-5 w-5" />
+                {t('common.githubRepo')}
+              </Button>
+            </Link>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {/* {logos.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="hover:opacity-80"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={theme === 'light' ? item.logo : item.logoInvert}
+                  alt={item.title}
+                  className="w-20 sm:w-24 md:w-28"
+                  unoptimized
+                  width={256}
+                />
+              </Link>
+            ))} */}
+          </div>
         </div>
       </div>
     </>

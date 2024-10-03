@@ -36,6 +36,8 @@
     "@react-spring/web": "9.7.4",
     "class-variance-authority": "0.7.0",
     "clsx": "2.1.1",
+    "embla-carousel-autoplay": "8.3.0",
+    "embla-carousel-react": "8.3.0",
     "github-slugger": "2.0.0",
     "jotai": "2.8.4",
     "lodash.throttle": "4.1.1",

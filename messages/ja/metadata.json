@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "appTitle": "Skeet v3",
+    "appTitle": "Skeet v3 SSG デモ",
     "defaultTitle": "ホーム",
-    "defaultDescription": "Skeet v3 静的サイトジェネレータ",
+    "defaultDescription": "Skeet v3 静的サイトジェネレータ RC デモ",
     "keywords": "サーバーレス, TypeScript, SSG, Next.js, フレームワーク, Cloudflare"
   }
 }
