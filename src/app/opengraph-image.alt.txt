@@ -1,1 +1,1 @@
-Skeet Serverless Framework
+Skeet - TypeScript Serverless Framework
