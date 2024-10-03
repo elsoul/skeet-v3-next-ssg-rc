@@ -87,7 +87,7 @@ export default function HomeHeroRow() {
           <Image
             src={OPOSCompressedCoil}
             alt="Background"
-            className="h-48 w-48 sm:h-64 sm:w-64 md:h-96 md:w-96 lg:h-[512px] lg:w-[512px]"
+            className="h-56 w-56 sm:h-64 sm:w-64 md:h-96 md:w-96 lg:h-[512px] lg:w-[512px]"
             unoptimized
             width={256}
             height={256}
