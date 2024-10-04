@@ -86,7 +86,7 @@ export function usePagerData({ slug, groupDir, locale, articlePaths }: Props) {
         title: previousRouteTitle.title as string,
       },
     }
-  }, [])
+  }, [slug, groupDir, locale, articlePaths])
 
   return pagerData
 }
