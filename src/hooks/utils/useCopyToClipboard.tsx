@@ -20,7 +20,7 @@ export function useCopyToClipboard({
       return
     }
 
-    navigator.clipboard.writeText(value).then(() => {
+    void navigator.clipboard.writeText(value).then(() => {
       setIsCopied(true)
 
       setTimeout(() => {
