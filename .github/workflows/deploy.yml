@@ -27,8 +27,7 @@ jobs:
         run: deno install
 
       - name: Deploy to Cloudflare
-        run: deno tasks deploy
+        run: deno task deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-
