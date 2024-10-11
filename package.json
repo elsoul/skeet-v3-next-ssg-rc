@@ -10,8 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "preview": "npm run build && npx wrangler pages dev ./out",
-    "deploy": "npm run build && npx wrangler pages deploy",
-    "ui:add": "npx shadcn@latest add"
+    "deploy": "npm run build && npx wrangler pages deploy"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.2",
@@ -73,9 +72,5 @@
     "typescript": "5.4.5",
     "unified": "11.0.5",
     "wrangler": "3.58.0"
-  },
-  "overrides": {
-    "@types/react": "npm:types-react@rc",
-    "@types/react-dom": "npm:types-react-dom@rc"
   }
 }

@@ -70,16 +70,11 @@ Open [http://localhost:4242](http://localhost:4242) with your browser to see the
 
 You can add the high-quality UI components from [shadcn/ui](https://ui.shadcn.com/)
 
-```bash
-// shortcut method for shadcn/ui
-deno task add:ui button
-```
-
-You can also use [v0](https://v0.dev/) which is a UI generator with shadcn/ui from simple text prompts and images.
-
 <a href="https://v0.dev/">
   <img src="https://storage.skeet.dev/v0.jpg" alt="v0" />
 </a>
+
+You can also use [v0](https://v0.dev/) which is a UI generator with shadcn/ui from simple text prompts and images.
 
 ## References
 
