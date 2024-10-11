@@ -3,7 +3,7 @@ import {
   ArticlePageProps,
   getDataForArticlePageByFilename,
   getArticleBySlug,
-  getArticleForIndex,
+  getArticleForIndex
 } from '@/lib/articles'
 import NewsMobileHeader from '../NewsMobileHeader'
 import ScrollSyncToc from '@/components/articles/ScrollSyncToc'
@@ -16,13 +16,12 @@ import ArticleIndex from '@/components/articles/ArticleIndex'
 import { usePagerData } from '@/hooks/articles/usePagerData'
 import ArticlePager from '@/components/articles/ArticlePager'
 
-
 const { groupDir, generateMetadata, generateStaticParams, getArticlePaths } =
   getDataForArticlePageByFilename(__filename)
 export { generateMetadata, generateStaticParams }
 
 export default function NewsArticlePage({
-  params: { locale, slug },
+  params: { locale, slug }
 }: ArticlePageProps) {
   unstable_setRequestLocale(locale)
   const t = useTranslations()
@@ -31,20 +30,20 @@ export default function NewsArticlePage({
     slug,
     ['title', 'category', 'thumbnail', 'date', 'content'],
     groupDir,
-    locale,
+    locale
   )
 
   const articlesData = getArticleForIndex(
     groupDir,
     ['title', 'thumbnail', 'date'],
-    locale,
+    locale
   )
 
   const pagerData = usePagerData({
     slug,
     groupDir,
     locale,
-    articlePaths: getArticlePaths(),
+    articlePaths: getArticlePaths()
   })
 
   return (
@@ -89,7 +88,7 @@ export default function NewsArticlePage({
             <div
               className={cn(
                 'scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-zinc-300 dark:scrollbar-track-zinc-950 dark:scrollbar-thumb-zinc-600',
-                'hidden max-h-[calc(100vh-10rem)] md:sticky md:top-32 md:block',
+                'hidden max-h-[calc(100vh-10rem)] md:sticky md:top-32 md:block'
               )}
             >
               <ScrollSyncToc rawMarkdownBody={articleData.content as string} />

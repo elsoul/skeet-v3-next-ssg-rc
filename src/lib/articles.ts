@@ -120,11 +120,13 @@ export const getArticleForIndex = (
 ): ArticleData[] => {
   let slugs: string[][] = getAllArticles(groupDir)
 
-  slugs = slugs.sort((a, b) => {
-    const dateA = new Date(`${a[0]}-${a[1]}-${a[2]}`)
-    const dateB = new Date(`${b[0]}-${b[1]}-${b[2]}`)
-    return dateB.getTime() - dateA.getTime()
-  })
+  if (groupDir === 'news') {
+    slugs = slugs.sort((a, b) => {
+      const dateA = new Date(`${a[0]}-${a[1]}-${a[2]}`)
+      const dateB = new Date(`${b[0]}-${b[1]}-${b[2]}`)
+      return dateB.getTime() - dateA.getTime()
+    })
+  }
 
   const articles = slugs.map((slug) =>
     getArticleBySlug(slug, matterArray, groupDir, locale)
