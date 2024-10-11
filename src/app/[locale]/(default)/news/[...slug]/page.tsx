@@ -16,6 +16,7 @@ import ArticleIndex from '@/components/articles/ArticleIndex'
 import { usePagerData } from '@/hooks/articles/usePagerData'
 import ArticlePager from '@/components/articles/ArticlePager'
 
+
 const { groupDir, generateMetadata, generateStaticParams, getArticlePaths } =
   getDataForArticlePageByFilename(__filename)
 export { generateMetadata, generateStaticParams }

@@ -13,11 +13,11 @@ export const getArticleBySlug = (
   slugArray: string[],
   fields: string[] = [],
   articleDirPrefix: string,
-  locale: string,
+  locale: string
 ) => {
   const articlesDirectory = join(
     process.cwd(),
-    `articles/${articleDirPrefix}/${locale}`,
+    `articles/${articleDirPrefix}/${locale}`
   )
   const matchedSlug = slugArray.join('/')
   const realSlug = matchedSlug.replace(/\.md$/, '')
@@ -77,7 +77,7 @@ export const getDataForArticlePageByFilename = (filename: string) => {
         slug,
         ['title', 'thumbnail', 'content'],
         groupDir,
-        locale,
+        locale
       )
 
       const description = truncateContent(metadata.content, 160)
@@ -86,11 +86,11 @@ export const getDataForArticlePageByFilename = (filename: string) => {
         title: metadata.title,
         description,
         openGraph: {
-          images: [metadata.thumbnail],
+          images: [metadata.thumbnail]
         },
         twitter: {
-          images: [metadata.thumbnail],
-        },
+          images: [metadata.thumbnail]
+        }
       }
     },
     generateStaticParams: () => {
@@ -99,7 +99,7 @@ export const getDataForArticlePageByFilename = (filename: string) => {
 
         return articles.map((slug) => ({
           locale,
-          slug,
+          slug
         }))
       })
       return paths
@@ -107,7 +107,7 @@ export const getDataForArticlePageByFilename = (filename: string) => {
     getArticlePaths: () => {
       const articles = getAllArticles(groupDir)
       return articles.map((slug) => `/${slug.join('/')}`)
-    },
+    }
   }
 }
 
@@ -116,19 +116,25 @@ export type ArticleData = { article: Items; url: string }
 export const getArticleForIndex = (
   groupDir: string,
   matterArray: string[],
-  locale: string,
+  locale: string
 ): ArticleData[] => {
-  const slugs: string[][] = getAllArticles(groupDir)
+  let slugs: string[][] = getAllArticles(groupDir)
+
+  slugs = slugs.sort((a, b) => {
+    const dateA = new Date(`${a[0]}-${a[1]}-${a[2]}`)
+    const dateB = new Date(`${b[0]}-${b[1]}-${b[2]}`)
+    return dateB.getTime() - dateA.getTime()
+  })
 
   const articles = slugs.map((slug) =>
-    getArticleBySlug(slug, matterArray, groupDir, locale),
+    getArticleBySlug(slug, matterArray, groupDir, locale)
   )
 
   const urls = slugs.map((slug) => `/${groupDir}/${slug.join('/')}`)
 
   return articles.map((article, index) => ({
     article,
-    url: urls[index],
+    url: urls[index]
   }))
 }
 

@@ -3,6 +3,6 @@
     "appTitle": "Skeet v3 SSG Demo",
     "defaultTitle": "Home",
     "defaultDescription": "Skeet v3 Static Site Generator RC Demo.",
-    "keywords": "Serverless, TypeScript, SSG, Next.js, Framework, Cloudflare"
+    "keywords": "Edge-Native, Edge, Deno, Serverless, TypeScript, SSG, Next.js, Framework, Cloudflare"
   }
 }

@@ -8,6 +8,7 @@ import ScrollSyncToc from '@/components/articles/ScrollSyncToc'
 import ArticleContents from '@/components/articles/ArticleContents'
 import { cn } from '@/lib/utils'
 
+
 const { groupDir, generateMetadata, generateStaticParams } =
   getDataForArticlePageByFilename(__filename)
 export { generateMetadata, generateStaticParams }

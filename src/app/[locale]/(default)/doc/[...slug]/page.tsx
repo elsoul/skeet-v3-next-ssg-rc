@@ -13,6 +13,7 @@ import { docMenuData } from '../docNavs'
 import { usePagerData } from '@/hooks/articles/usePagerData'
 import ArticlePager from '@/components/articles/ArticlePager'
 
+
 const { groupDir, generateMetadata, generateStaticParams } =
   getDataForArticlePageByFilename(__filename)
 export { generateMetadata, generateStaticParams }

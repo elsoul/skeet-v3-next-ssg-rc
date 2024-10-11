@@ -3,6 +3,6 @@
     "appTitle": "Skeet v3 SSG デモ",
     "defaultTitle": "ホーム",
     "defaultDescription": "Skeet v3 静的サイトジェネレータ RC デモ",
-    "keywords": "サーバーレス, TypeScript, SSG, Next.js, フレームワーク, Cloudflare"
+    "keywords": "Edge-Native, Edge, Deno, サーバーレス, TypeScript, SSG, Next.js, フレームワーク, Cloudflare"
   }
 }

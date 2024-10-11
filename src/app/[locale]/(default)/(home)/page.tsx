@@ -17,7 +17,7 @@ export default function HomePage({ params: { locale } }: PageProps) {
   const newsData = getArticleForIndex(
     'news',
     ['title', 'thumbnail', 'date'],
-    locale,
+    locale
   )
 
   return (

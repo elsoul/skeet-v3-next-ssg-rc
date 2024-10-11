@@ -3,22 +3,15 @@
   "version": "0.1.0",
   "author": "ELSOUL LABO B.V.",
   "license": "Apache-2.0",
-  "engines": {
-    "pnpm": ">=9",
-    "npm": "please_use_pnpm_instead",
-    "node": ">=20"
-  },
-  "packageManager": "pnpm@9.1.4",
   "scripts": {
     "dev": "next dev -p 4242",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "preview": "pnpm build && wrangler pages dev ./out",
-    "deploy": "pnpm build && wrangler pages deploy",
-    "npm:update": "pnpm update \"!eslint\" --latest",
-    "ui:add": "pnpm dlx shadcn@latest add"
+    "preview": "npm run build && npx wrangler pages dev ./out",
+    "deploy": "npm run build && npx wrangler pages deploy",
+    "ui:add": "npx shadcn@latest add"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.5.2",

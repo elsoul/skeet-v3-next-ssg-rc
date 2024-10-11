@@ -27,6 +27,7 @@ Demo: https://skeeter.dev/
 
 ## Features
 
+- Edge-Native
 - Static Site Generation
 - i18n Native
 - Next.js App Router
@@ -39,14 +40,12 @@ Demo: https://skeeter.dev/
 
 ## Built with
 
+- [Deno](https://deno.com/)
 - [Next.js](https://nextjs.org/)
 - [Cloudflare Pages](https://pages.cloudflare.com/)
 - [Wrangler](https://developers.cloudflare.com/workers/wrangler/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- [pnpm](https://pnpm.io/)
 - [next-intl](https://next-intl-docs.vercel.app/)
 - [React Compiler](https://react.dev/learn/react-compiler)
 - [shadcn/ui](https://ui.shadcn.com/)
@@ -57,8 +56,8 @@ Demo: https://skeeter.dev/
 First, run the development server:
 
 ```bash
-pnpm i
-pnpm dev
+deno i
+deno task dev
 ```
 
 Open [http://localhost:4242](http://localhost:4242) with your browser to see the result.
@@ -73,7 +72,7 @@ You can add the high-quality UI components from [shadcn/ui](https://ui.shadcn.co
 
 ```bash
 // shortcut method for shadcn/ui
-pnpm add:ui button
+deno task add:ui button
 ```
 
 You can also use [v0](https://v0.dev/) which is a UI generator with shadcn/ui from simple text prompts and images.
@@ -90,7 +89,7 @@ You can also use [v0](https://v0.dev/) which is a UI generator with shadcn/ui fr
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/elsoul/skeet-v3-next-ssg-rc This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/elsoul/skeet This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -98,4 +97,4 @@ The package is available as open source under the terms of the [Apache-2.0 Licen
 
 ## Code of Conduct
 
-Everyone interacting in the Skeet project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/elsoul/skeet-v3-next-ssg-rc/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Skeet project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/elsoul/skeet/blob/master/CODE_OF_CONDUCT.md).
