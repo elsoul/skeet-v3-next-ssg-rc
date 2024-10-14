@@ -4,11 +4,10 @@
   "author": "ELSOUL LABO B.V.",
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "next dev -p 4242",
-    "build": "next build",
-    "postbuild": "next-sitemap",
-    "start": "next start",
-    "lint": "next lint",
+    "dev": "npx next dev -p 4242",
+    "build": "npx next build",
+    "postbuild": "npx next-sitemap",
+    "lint": "npx next lint",
     "preview": "npm run build && npx wrangler pages dev ./out",
     "deploy": "npm run build && npx wrangler pages deploy"
   },
