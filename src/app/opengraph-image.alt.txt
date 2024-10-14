@@ -1,1 +1,1 @@
-Skeet - TypeScript Serverless Framework
+Skeet: Edge-Native Web Framework
