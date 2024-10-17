@@ -2,21 +2,22 @@
 
 import * as React from 'react'
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
-import { useTheme } from 'next-themes'
+import { useTheme } from '@/hooks/utils/useTheme'
 
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import { useTranslations } from 'next-intl'
 
 export function ModeToggle() {
-  const { setTheme } = useTheme()
   const t = useTranslations()
 
+  const { theme, mounted, setTheme } = useTheme()
+  if (!mounted) return null
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
