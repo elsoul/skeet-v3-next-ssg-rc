@@ -10,13 +10,13 @@ import { locales } from '@/app/config'
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-inter'
 })
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-noto-sans-jp',
+  variable: '--font-noto-sans-jp'
 })
 
 type Props = {
@@ -32,7 +32,7 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params: { locale }
 }: Props) {
   unstable_setRequestLocale(locale)
   const messages = await getMessages({ locale })
@@ -42,12 +42,7 @@ export default async function LocaleLayout({
         className={cn(`${inter.variable} ${notoSansJP.variable}`)}
         suppressHydrationWarning
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="system">
           <NextIntlClientProvider messages={messages}>
             {children}
             <Toaster />
