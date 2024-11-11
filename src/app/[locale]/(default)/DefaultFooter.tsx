@@ -5,13 +5,13 @@ import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
 import {
   DiscordIconLink,
   GithubIconLink,
-  TwitterIconLink,
+  TwitterIconLink
 } from '@/components/common/icons'
 
 import { LanguageToggle } from '@/components/config/LanguageToggle'
 import { ModeToggle } from '@/components/config/ModeToggle'
 import { defaultFooterNav } from './defaultNavs'
-import { Link, usePathname } from '@/navigation'
+import { Link, usePathname } from '@/i18n/routing'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
 import GreenHostingBadge from '@/components/common/GreenHostingBadge'
@@ -42,7 +42,7 @@ export default function DefaultFooter() {
                   isActivePath(navItem.path)
                     ? 'text-blue-500 dark:text-blue-300'
                     : 'text-zinc-500 dark:text-zinc-300',
-                  'flex items-center gap-4 py-2 text-sm hover:opacity-70',
+                  'flex items-center gap-4 py-2 text-sm hover:opacity-70'
                 )}
               >
                 {t(navItem.label)}
@@ -54,7 +54,7 @@ export default function DefaultFooter() {
               href={appInfo.loginUrl}
               className={cn(
                 'text-zinc-500 dark:text-zinc-300',
-                'flex items-center gap-4 py-2 text-sm hover:opacity-70',
+                'flex items-center gap-4 py-2 text-sm hover:opacity-70'
               )}
               target="_blank"
             >

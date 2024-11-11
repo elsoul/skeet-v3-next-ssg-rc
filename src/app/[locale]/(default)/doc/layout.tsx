@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import { unstable_setRequestLocale } from 'next-intl/server'
+import { setRequestLocale } from 'next-intl/server'
 import DocMenu from './DocMenu'
 
 type Props = {
@@ -9,11 +9,9 @@ type Props = {
   }
 }
 
-export default async function DocLayout({
-  children,
-  params: { locale },
-}: Props) {
-  unstable_setRequestLocale(locale)
+export default async function DocLayout({ children, params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
 
   return (
     <>
@@ -23,7 +21,7 @@ export default async function DocLayout({
             <div
               className={cn(
                 'scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-zinc-300 dark:scrollbar-track-zinc-950 dark:scrollbar-thumb-zinc-600',
-                'hidden max-h-[calc(100vh-10rem)] lg:sticky lg:top-32 lg:block',
+                'hidden max-h-[calc(100vh-10rem)] lg:sticky lg:top-32 lg:block'
               )}
             >
               <DocMenu />

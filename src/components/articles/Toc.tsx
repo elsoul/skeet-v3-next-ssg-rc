@@ -27,7 +27,7 @@ export default function Toc({ toc, activeItemIds, modalFunction }: Props) {
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    id: string,
+    id: string
   ) => {
     e.preventDefault()
     if (modalFunction) {
@@ -62,7 +62,7 @@ export default function Toc({ toc, activeItemIds, modalFunction }: Props) {
                     activeItemIds.includes(item.id)
                       ? 'text-blue-500 dark:text-blue-300'
                       : 'text-zinc-500 dark:text-zinc-300 md:text-zinc-400 md:dark:text-zinc-400',
-                    `block py-2 text-sm hover:opacity-70 ml-${item.depth * 4}`,
+                    `block py-2 text-sm hover:opacity-70 ml-${item.depth * 4}`
                   )}
                   aria-current={
                     activeItemIds.includes(item.id) ? 'location' : undefined

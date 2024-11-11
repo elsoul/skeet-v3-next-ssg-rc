@@ -1,28 +1,26 @@
-import { unstable_setRequestLocale } from 'next-intl/server'
+import { setRequestLocale } from 'next-intl/server'
 import {
   ArticlePageProps,
   getDataForArticlePageByFilename,
-  getArticleBySlug,
+  getArticleBySlug
 } from '@/lib/articles'
 import ScrollSyncToc from '@/components/articles/ScrollSyncToc'
 import ArticleContents from '@/components/articles/ArticleContents'
 import { cn } from '@/lib/utils'
 
-
 const { groupDir, generateMetadata, generateStaticParams } =
   getDataForArticlePageByFilename(__filename)
 export { generateMetadata, generateStaticParams }
 
-export default function LegalArticlePage({
-  params: { locale, slug },
-}: ArticlePageProps) {
-  unstable_setRequestLocale(locale)
+export default async function LegalArticlePage({ params }: ArticlePageProps) {
+  const { locale, slug } = await params
+  setRequestLocale(locale)
 
   const articleData = getArticleBySlug(
     slug,
     ['title', 'content'],
     groupDir,
-    locale,
+    locale
   )
 
   return (
@@ -39,7 +37,7 @@ export default function LegalArticlePage({
             <div
               className={cn(
                 'scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-zinc-300 dark:scrollbar-track-zinc-950 dark:scrollbar-thumb-zinc-600',
-                'hidden max-h-[calc(100vh-10rem)] md:sticky md:top-32 md:block',
+                'hidden max-h-[calc(100vh-10rem)] md:sticky md:top-32 md:block'
               )}
             >
               <ScrollSyncToc rawMarkdownBody={articleData.content as string} />

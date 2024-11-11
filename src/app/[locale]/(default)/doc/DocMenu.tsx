@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { Link, usePathname } from '@/navigation'
+import { Link, usePathname } from '@/i18n/routing'
 import { docMenuData } from './docNavs'
 import { Item, Section } from '@/lib/articles'
 import { ChevronRightIcon, ChevronDownIcon } from '@radix-ui/react-icons'
@@ -33,7 +33,7 @@ const DocMenuSection = ({ section }: DocMenuSectionProps) => {
           <span
             className={cn(
               isActivePath(section.route) && 'text-blue-500 dark:text-blue-300',
-              'flex-1 text-sm font-bold',
+              'flex-1 text-sm font-bold'
             )}
           >
             {t(section.title)}
@@ -86,7 +86,7 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
                   isActivePath(item.route as string)
                     ? 'text-blue-500 dark:text-blue-300'
                     : 'text-zinc-500 dark:text-zinc-300',
-                  'flex-1 text-sm',
+                  'flex-1 text-sm'
                 )}
               >
                 {t(item.title)}
@@ -105,7 +105,7 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
                     isActivePath(subItem.route)
                       ? 'text-blue-500 dark:text-blue-300'
                       : 'text-zinc-400 dark:text-zinc-400',
-                    'w-full py-2 text-sm hover:opacity-70',
+                    'w-full py-2 text-sm hover:opacity-70'
                   )}
                 >
                   {t(subItem.title)}

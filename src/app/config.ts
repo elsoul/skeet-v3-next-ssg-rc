@@ -7,5 +7,5 @@ export const messageJsons = [
   '(home)',
   'news',
   'doc',
-  'legal',
+  'legal'
 ]

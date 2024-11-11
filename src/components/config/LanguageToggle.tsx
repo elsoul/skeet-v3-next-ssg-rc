@@ -6,9 +6,9 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import { useRouter, usePathname } from '@/navigation'
+import { useRouter, usePathname } from '@/i18n/routing'
 
 export function LanguageToggle() {
   const pathname = usePathname()

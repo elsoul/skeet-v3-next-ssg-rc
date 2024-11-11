@@ -24,8 +24,8 @@ import appInfo from '@appInfo'
 import { mainShardGradation } from '@/lib/decoration'
 
 import { cn } from '@/lib/utils'
-import { Link } from '@/navigation'
-import { useLocale, useTranslations } from 'next-intl'
+import { Link } from '@/i18n/routing'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { useTheme } from '@/hooks/utils/useTheme'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -78,7 +78,6 @@ const logos = [
 
 export default function HomeHeroRow() {
   const t = useTranslations()
-  const locale = useLocale()
   const { theme, mounted } = useTheme()
   if (!mounted) return null
 

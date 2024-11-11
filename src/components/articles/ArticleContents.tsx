@@ -110,7 +110,7 @@ export default function ArticleContents({ content }: Props) {
                 {...props}
               />
             )
-          },
+          }
         }}
       >
         {content}

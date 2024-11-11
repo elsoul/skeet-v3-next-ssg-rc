@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button'
 import {
   CheckIcon,
   ClipboardCopyIcon,
-  DownloadIcon,
+  DownloadIcon
 } from '@radix-ui/react-icons'
 import { useTranslations } from 'next-intl'
 import { cn } from '@/lib/utils'
@@ -54,7 +54,7 @@ export const programmingLanguages: languageMap = {
   sql: '.sql',
   html: '.html',
   css: '.css',
-  tsx: '.tsx',
+  tsx: '.tsx'
 }
 
 export const generateRandomString = (length: number, lowercase = false) => {
@@ -77,9 +77,9 @@ const CodeBlock: FC<Props> = memo(({ language, value, fileName }) => {
     const fileExtension = programmingLanguages[language] || '.file'
     const suggestedFileName = `file-${generateRandomString(
       3,
-      true,
+      true
     )}${fileExtension}`
-    const fileName = window.prompt('Enter file name' || '', suggestedFileName)
+    const fileName = window.prompt('Enter file name', suggestedFileName)
 
     if (!fileName) {
       return
@@ -107,7 +107,7 @@ const CodeBlock: FC<Props> = memo(({ language, value, fileName }) => {
       <div
         className={cn(
           'flex items-center justify-between gap-2 rounded-t-2xl bg-zinc-800 px-4 pr-4 pt-1.5 text-zinc-100',
-          'scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-track-zinc-800 scrollbar-thumb-zinc-300 dark:scrollbar-track-zinc-800 dark:scrollbar-thumb-zinc-600',
+          'scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-track-zinc-800 scrollbar-thumb-zinc-300 dark:scrollbar-track-zinc-800 dark:scrollbar-thumb-zinc-600'
         )}
       >
         <span className="w-full break-all text-xs lowercase">
@@ -144,7 +144,7 @@ const CodeBlock: FC<Props> = memo(({ language, value, fileName }) => {
         PreTag="div"
         customStyle={{
           width: '100%',
-          borderRadius: '0 0 1rem 1rem',
+          borderRadius: '0 0 1rem 1rem'
         }}
       >
         {value}

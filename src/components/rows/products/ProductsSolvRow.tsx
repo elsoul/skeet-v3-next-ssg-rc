@@ -1,4 +1,5 @@
-import { Link } from '@/navigation'
+'use client'
+import { Link } from '@/i18n/routing'
 import { useLocale, useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
@@ -35,7 +36,7 @@ export default function ProductsSolvRow() {
           <h2
             className={cn(
               'py-2 text-3xl font-extrabold tracking-tighter sm:text-4xl',
-              mainShardGradation,
+              mainShardGradation
             )}
           >
             {t('common.ProductsSolvRow.title')}

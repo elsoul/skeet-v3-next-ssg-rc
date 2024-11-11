@@ -4,7 +4,7 @@ import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
 import appInfo from '@appInfo'
 import DefaultModalNav from './DefaultModalNav'
 import { defaultHeaderNav } from './defaultNavs'
-import { Link, usePathname } from '@/navigation'
+import { Link, usePathname } from '@/i18n/routing'
 import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
 import { useShowHeader } from '@/hooks/utils/useShowHeader'
@@ -22,7 +22,7 @@ export default function DefaultHeader() {
       <header
         className={cn(
           'sticky top-0 z-10 flex w-full flex-col gap-10 bg-white bg-opacity-80 px-6 py-4 backdrop-blur-xl transition-transform duration-300 ease-in-out dark:bg-zinc-950 dark:bg-opacity-20',
-          showHeader ? 'translate-y-0' : '-translate-y-full',
+          showHeader ? 'translate-y-0' : '-translate-y-full'
         )}
       >
         <div className="mx-auto flex w-full max-w-7xl flex-row items-center gap-2 md:gap-20">
@@ -36,7 +36,7 @@ export default function DefaultHeader() {
                   isActivePath(navItem.path)
                     ? 'text-blue-500 dark:text-blue-300'
                     : 'text-zinc-500 dark:text-zinc-300',
-                  'flex items-center gap-4 text-sm hover:opacity-70',
+                  'flex items-center gap-4 text-sm hover:opacity-70'
                 )}
               >
                 {t(navItem.label)}

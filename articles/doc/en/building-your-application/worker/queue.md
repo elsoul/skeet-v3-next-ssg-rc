@@ -41,7 +41,7 @@ console.log('Hello, World!')
 
 ```tsx:/src/app/[locale]/(default)/layout.tsx
 
-import { unstable_setRequestLocale } from 'next-intl/server'
+import { setRequestLocale } from 'next-intl/server'
 import DefaultHeader from './DefaultHeader'
 import DefaultFooter from './DefaultFooter'
 
@@ -56,7 +56,7 @@ export default async function DefaultLayout({
   children,
   params: { locale },
 }: Props) {
-  unstable_setRequestLocale(locale)
+  setRequestLocale(locale)
 
   return (
     <>

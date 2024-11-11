@@ -1,44 +1,42 @@
-import { unstable_setRequestLocale } from 'next-intl/server'
+import { setRequestLocale } from 'next-intl/server'
 import {
   ArticlePageProps,
   getDataForArticlePageByFilename,
   getArticleBySlug,
-  getAllRoutes,
+  getAllRoutes
 } from '@/lib/articles'
 import ScrollSyncToc from '@/components/articles/ScrollSyncToc'
 import { cn } from '@/lib/utils'
 import ArticleContents from '@/components/articles/ArticleContents'
 import DocMobileHeader from '../DocMobileHeader'
 import { docMenuData } from '../docNavs'
-import { usePagerData } from '@/hooks/articles/usePagerData'
+import { getPagerData } from '@/lib/getPagerData'
 import ArticlePager from '@/components/articles/ArticlePager'
-
 
 const { groupDir, generateMetadata, generateStaticParams } =
   getDataForArticlePageByFilename(__filename)
 export { generateMetadata, generateStaticParams }
 
-export default function DocArticlePage({
-  params: { locale, slug },
-}: ArticlePageProps) {
-  unstable_setRequestLocale(locale)
+export default async function DocArticlePage({ params }: ArticlePageProps) {
+  const { locale, slug } = await params
+  setRequestLocale(locale)
 
   const articleData = getArticleBySlug(
     slug,
     ['title', 'thumbnail', 'content'],
     groupDir,
-    locale,
+    locale
   )
   const allRoutes = getAllRoutes(docMenuData)
   const articlePaths = allRoutes.map(
-    (route) => `/${route.split('/').slice(2).join('/')}`,
+    (route) => `/${route.split('/').slice(2).join('/')}`
   )
 
-  const pagerData = usePagerData({
+  const pagerData = getPagerData({
     slug,
     groupDir,
     locale,
-    articlePaths,
+    articlePaths
   })
 
   return (
@@ -58,7 +56,7 @@ export default function DocArticlePage({
           <div
             className={cn(
               'scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-auto scrollbar-thin scrollbar-track-white scrollbar-thumb-zinc-300 dark:scrollbar-track-zinc-950 dark:scrollbar-thumb-zinc-600',
-              'hidden max-h-[calc(100vh-10rem)] md:sticky md:top-32 md:block',
+              'hidden max-h-[calc(100vh-10rem)] md:sticky md:top-32 md:block'
             )}
           >
             <ScrollSyncToc rawMarkdownBody={articleData.content as string} />

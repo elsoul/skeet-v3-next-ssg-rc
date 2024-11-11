@@ -2,7 +2,7 @@
 
 import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 import { Button } from '@/components/ui/button'
-import { Link, usePathname } from '@/navigation'
+import { Link, usePathname } from '@/i18n/routing'
 import appInfo from '@appInfo'
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
@@ -14,7 +14,7 @@ import { useState } from 'react'
 import {
   DiscordIconLink,
   GithubIconLink,
-  TwitterIconLink,
+  TwitterIconLink
 } from '@/components/common/icons'
 import { defaultHeaderNav } from './defaultNavs'
 
@@ -56,7 +56,7 @@ export default function DefaultModalNav() {
                   isActivePath(navItem.path)
                     ? 'text-blue-500 dark:text-blue-300'
                     : 'text-zinc-500 dark:text-zinc-300',
-                  'mx-[-0.65rem] flex items-center gap-4 px-3 py-2 text-sm hover:opacity-70',
+                  'mx-[-0.65rem] flex items-center gap-4 px-3 py-2 text-sm hover:opacity-70'
                 )}
                 onClick={() => setOpen(false)}
               >

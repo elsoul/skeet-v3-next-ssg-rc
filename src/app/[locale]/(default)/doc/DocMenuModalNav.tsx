@@ -2,7 +2,7 @@
 
 import { ListBulletIcon } from '@radix-ui/react-icons'
 import { Button } from '@/components/ui/button'
-import { usePathname } from '@/navigation'
+import { usePathname } from '@/i18n/routing'
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import LogoHorizontalLink from '@/components/common/LogoHorizontalLink'
@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react'
 import {
   DiscordIconLink,
   GithubIconLink,
-  TwitterIconLink,
+  TwitterIconLink
 } from '@/components/common/icons'
 import DocMenu from './DocMenu'
 
