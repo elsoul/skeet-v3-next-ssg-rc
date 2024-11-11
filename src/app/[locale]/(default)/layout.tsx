@@ -4,9 +4,9 @@ import DefaultFooter from './DefaultFooter'
 
 type Props = {
   children: React.ReactNode
-  params: {
+  params: Promise<{
     locale: string
-  }
+  }>
 }
 
 export default async function DefaultLayout({ children, params }: Props) {

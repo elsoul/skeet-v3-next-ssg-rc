@@ -62,10 +62,10 @@ export const getAllArticles = (articleDirPrefix: string) => {
 }
 
 export type ArticlePageProps = {
-  params: {
+  params: Promise<{
     locale: string
     slug: string[]
-  }
+  }>
 }
 
 export const getDataForArticlePageByFilename = (filename: string) => {

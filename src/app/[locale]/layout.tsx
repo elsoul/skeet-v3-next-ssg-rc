@@ -21,9 +21,9 @@ const notoSansJP = Noto_Sans_JP({
 
 type Props = {
   children: React.ReactNode
-  params: {
+  params: Promise<{
     locale: string
-  }
+  }>
 }
 
 export function generateStaticParams() {

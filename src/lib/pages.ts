@@ -2,9 +2,9 @@ import { getGroupDir } from './utils'
 import { getTranslations } from 'next-intl/server'
 
 export type PageProps = {
-  params: {
+  params: Promise<{
     locale: string
-  }
+  }>
 }
 
 export const getDataForPageByFilename = (filename: string) => {
