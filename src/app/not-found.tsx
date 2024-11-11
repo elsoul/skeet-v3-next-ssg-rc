@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function NotFound() {
   return (
     <>
@@ -8,7 +10,7 @@ export default function NotFound() {
             <div>
               <style
                 dangerouslySetInnerHTML={{
-                  __html: `body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}`,
+                  __html: `body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}`
                 }}
               />
               <h1 className="next-error-h1" style={styles.h1}>
@@ -19,9 +21,9 @@ export default function NotFound() {
               </div>
             </div>
 
-            <a href="/" style={styles.button}>
+            <Link href="/" style={styles.button}>
               Go back to Home
-            </a>
+            </Link>
           </div>
         </body>
       </html>
@@ -38,11 +40,11 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
 
   desc: {
-    display: 'inline-block',
+    display: 'inline-block'
   },
 
   h1: {
@@ -52,14 +54,14 @@ const styles = {
     fontSize: 24,
     fontWeight: 500,
     verticalAlign: 'top',
-    lineHeight: '49px',
+    lineHeight: '49px'
   },
 
   h2: {
     fontSize: 14,
     fontWeight: 400,
     lineHeight: '49px',
-    margin: 0,
+    margin: 0
   },
 
   button: {
@@ -73,6 +75,6 @@ const styles = {
     borderRadius: '6px',
     textDecoration: 'none',
     transition: 'background-color 0.2s ease',
-    cursor: 'pointer',
-  },
+    cursor: 'pointer'
+  }
 } as const
