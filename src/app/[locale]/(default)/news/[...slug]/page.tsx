@@ -1,9 +1,9 @@
 import { setRequestLocale } from 'next-intl/server'
 import {
   ArticlePageProps,
-  getDataForArticlePageByFilename,
   getArticleBySlug,
-  getArticleForIndex
+  getArticleForIndex,
+  getDataForArticlePageByGroupDir
 } from '@/lib/articles'
 import NewsMobileHeader from '../NewsMobileHeader'
 import ScrollSyncToc from '@/components/articles/ScrollSyncToc'
@@ -15,8 +15,9 @@ import ArticleIndex from '@/components/articles/ArticleIndex'
 import { getPagerData } from '@/lib/getPagerData'
 import ArticlePager from '@/components/articles/ArticlePager'
 
-const { groupDir, generateMetadata, generateStaticParams, getArticlePaths } =
-  getDataForArticlePageByFilename(__filename)
+const groupDir = 'news'
+const { generateMetadata, generateStaticParams, getArticlePaths } =
+  getDataForArticlePageByGroupDir(groupDir)
 export { generateMetadata, generateStaticParams }
 
 export default async function NewsArticlePage({ params }: ArticlePageProps) {
